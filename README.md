@@ -20,7 +20,7 @@ date,platform,agenda,topic,persona,mentions,engagement,sentiment,source,title,ur
 - `sentiment`：情绪健康度，0 到 100。
 - `source`：来源账号或来源类型。
 - `title`：帖子、稿件或视频标题。
-- `url`：可选链接。
+- `url`：原帖、原文或视频链接。没有链接时，页面会按平台和标题提供“搜索线索”，但不能直达原始案例。
 - `notes`：备注，用于解释为什么这条内容重要。
 
 ## 第一版用途

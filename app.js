@@ -736,7 +736,7 @@ function renderEvidence(filtered) {
   if (!sorted.length) {
     const row = document.createElement("tr");
     const cell = document.createElement("td");
-    cell.colSpan = 8;
+    cell.colSpan = 9;
     cell.appendChild(makeEmpty("当前筛选下没有内容记录。"));
     row.appendChild(cell);
     els.evidenceBody.appendChild(row);
@@ -765,6 +765,7 @@ function renderEvidence(filtered) {
       titleCell.appendChild(link);
     }
     row.appendChild(titleCell);
+    row.appendChild(makeCaseCell(record));
     row.appendChild(makeTd(formatNumber(record.mentions), "number-cell"));
     row.appendChild(makeTd(formatNumber(record.engagement), "number-cell"));
     els.evidenceBody.appendChild(row);
@@ -799,11 +800,61 @@ function makeEvidenceItem(record) {
   const notes = document.createElement("p");
   notes.textContent = record.notes || "暂无备注。";
 
+  const action = makeCaseLink(record);
+  const actionRow = document.createElement("div");
+  actionRow.className = "case-actions";
+  actionRow.appendChild(action);
+
   item.appendChild(meta);
   item.appendChild(title);
   item.appendChild(metrics);
   item.appendChild(notes);
+  item.appendChild(actionRow);
   return item;
+}
+
+function makeCaseCell(record) {
+  const cell = document.createElement("td");
+  cell.className = "case-cell";
+  cell.appendChild(makeCaseLink(record));
+  return cell;
+}
+
+function makeCaseLink(record) {
+  const link = document.createElement("a");
+  const hasExactUrl = Boolean(record.url);
+  link.href = hasExactUrl ? record.url : buildSearchUrl(record);
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.className = hasExactUrl ? "case-link exact" : "case-link fallback";
+  link.textContent = hasExactUrl ? "打开案例" : "搜索线索";
+  link.title = hasExactUrl
+    ? "打开这条内容的原始链接"
+    : "样例数据没有原始链接，将按标题和平台搜索线索";
+  return link;
+}
+
+function buildSearchUrl(record) {
+  const query = [
+    "BEYOND Expo 2026",
+    record.title,
+    record.source,
+    record.agenda,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const encoded = encodeURIComponent(query);
+
+  if (record.platform === "B站") return `https://search.bilibili.com/all?keyword=${encoded}`;
+  if (record.platform === "微博") return `https://s.weibo.com/weibo?q=${encoded}`;
+  if (record.platform === "小红书") return `https://www.xiaohongshu.com/search_result?keyword=${encoded}`;
+  if (record.platform === "抖音") return `https://www.douyin.com/search/${encoded}`;
+  if (record.platform === "LinkedIn") return `https://www.linkedin.com/search/results/content/?keywords=${encoded}`;
+  if (record.platform === "X") return `https://x.com/search?q=${encoded}&src=typed_query&f=live`;
+  if (record.platform === "YouTube") return `https://www.youtube.com/results?search_query=${encoded}`;
+  if (record.platform === "微信") return `https://weixin.sogou.com/weixin?type=2&query=${encoded}`;
+
+  return `https://www.baidu.com/s?wd=${encoded}`;
 }
 
 function normalizeRecord(row) {

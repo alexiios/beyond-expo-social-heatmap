@@ -467,6 +467,40 @@ input[type="search"] {
   font-weight: 700;
 }
 
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid #b9d9da;
+  border-radius: 6px;
+  color: var(--accent-strong);
+  background: #f7fbfb;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.case-link.exact {
+  color: #ffffff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.case-link:hover {
+  border-color: var(--accent-strong);
+  text-decoration: none;
+}
+
 .empty-state {
   padding: 14px;
   border: 1px dashed #b9c7d0;
@@ -493,7 +527,7 @@ input[type="search"] {
 
 .evidence-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 1080px;
   border-collapse: collapse;
 }
 
@@ -519,6 +553,10 @@ input[type="search"] {
 .evidence-table .title-cell {
   min-width: 260px;
   font-weight: 700;
+}
+
+.evidence-table .case-cell {
+  min-width: 92px;
 }
 
 .evidence-table .number-cell {
