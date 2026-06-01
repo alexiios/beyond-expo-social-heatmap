@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BEYOND Expo 2026 社交媒体热度追踪</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="title-block">
+        <p class="eyebrow">BEYOND Expo 2026</p>
+        <h1>社交媒体热度追踪</h1>
+        <p class="date-range">时间维度：2026年5月27日 - 5月31日</p>
+      </div>
+      <div class="data-status" id="dataStatus">
+        <span class="status-dot"></span>
+        <span>当前为样例数据，可导入 CSV 替换</span>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="toolbar" aria-label="热度追踪控制区">
+        <div class="field-group">
+          <label for="modeSelect">热力图维度</label>
+          <select id="modeSelect">
+            <option value="platform">平台 x 日期</option>
+            <option value="agenda">议程 x 日期</option>
+            <option value="topic">话题 x 日期</option>
+            <option value="persona">人群 x 日期</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="metricSelect">颜色指标</label>
+          <select id="metricSelect">
+            <option value="heat">综合热度分</option>
+            <option value="mentions">提及量</option>
+            <option value="engagement">互动量</option>
+            <option value="sentiment">情绪健康度</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="platformFilter">平台筛选</label>
+          <select id="platformFilter">
+            <option value="all">全部平台</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="topicFilter">话题筛选</label>
+          <select id="topicFilter">
+            <option value="all">全部话题</option>
+          </select>
+        </div>
+
+        <div class="field-group search-field">
+          <label for="searchInput">搜索内容</label>
+          <input id="searchInput" type="search" placeholder="输入账号、标题、议程或关键词" />
+        </div>
+
+        <div class="button-row">
+          <label class="button secondary" for="csvInput">导入 CSV</label>
+          <input id="csvInput" class="visually-hidden" type="file" accept=".csv,text/csv" />
+          <button class="button secondary" id="exportButton" type="button">导出当前数据</button>
+          <button class="button primary" id="resetButton" type="button">恢复样例</button>
+        </div>
+      </section>
+
+      <section class="kpi-grid" aria-label="核心指标">
+        <article class="kpi">
+          <span class="kpi-label">总提及量</span>
+          <strong id="kpiMentions">0</strong>
+          <small>筛选后记录汇总</small>
+        </article>
+        <article class="kpi">
+          <span class="kpi-label">总互动量</span>
+          <strong id="kpiEngagement">0</strong>
+          <small>点赞、评论、转发、播放等</small>
+        </article>
+        <article class="kpi">
+          <span class="kpi-label">峰值日期</span>
+          <strong id="kpiPeakDate">-</strong>
+          <small id="kpiPeakDateMeta">暂无数据</small>
+        </article>
+        <article class="kpi">
+          <span class="kpi-label">领先平台</span>
+          <strong id="kpiTopPlatform">-</strong>
+          <small id="kpiTopPlatformMeta">暂无数据</small>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <section class="heatmap-panel" aria-labelledby="heatmapTitle">
+          <div class="section-heading">
+            <div>
+              <h2 id="heatmapTitle">平台 x 日期</h2>
+              <p id="heatmapSubtitle">颜色越深，代表该日期下对应维度的热度越高。</p>
+            </div>
+            <div class="legend" aria-label="热度图例">
+              <span>低</span>
+              <span class="legend-bar"></span>
+              <span>高</span>
+            </div>
+          </div>
+          <div id="heatmap" class="heatmap" role="grid" aria-label="社交媒体热力图"></div>
+        </section>
+
+        <aside class="detail-panel" aria-labelledby="detailTitle">
+          <div class="section-heading compact">
+            <div>
+              <h2 id="detailTitle">选择一个色块</h2>
+              <p id="detailSubtitle">点击热力图单元格查看贡献内容。</p>
+            </div>
+          </div>
+          <div class="detail-score" id="detailScore">-</div>
+          <dl class="detail-metrics">
+            <div>
+              <dt>提及量</dt>
+              <dd id="detailMentions">-</dd>
+            </div>
+            <div>
+              <dt>互动量</dt>
+              <dd id="detailEngagement">-</dd>
+            </div>
+            <div>
+              <dt>情绪健康度</dt>
+              <dd id="detailSentiment">-</dd>
+            </div>
+          </dl>
+          <div class="detail-list" id="detailList">
+            <p class="empty-state">当前还没有选择具体色块。</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="evidence-section" aria-labelledby="evidenceTitle">
+        <div class="section-heading">
+          <div>
+            <h2 id="evidenceTitle">内容证据池</h2>
+            <p>用于解释热度来源。真实数据导入后，这里会变成可复盘的内容清单。</p>
+          </div>
+          <span class="record-count" id="recordCount">0 条记录</span>
+        </div>
+        <div class="evidence-table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>平台</th>
+                <th>议程</th>
+                <th>话题</th>
+                <th>人群</th>
+                <th>标题/内容</th>
+                <th>提及</th>
+                <th>互动</th>
+              </tr>
+            </thead>
+            <tbody id="evidenceBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
