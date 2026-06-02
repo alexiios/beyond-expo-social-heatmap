@@ -1,30 +1,156 @@
 date,platform,agenda,topic,persona,mentions,engagement,sentiment,source,title,url,notes
-2026-05-27,微信,开幕式,AI,官方/主办方,72,6200,88,官方公众号,BEYOND Expo 2026 开幕，大会主题聚焦 AI 与数实共生,,样例数据：用于演示开幕日官方内容的集中传播。
-2026-05-27,视频号,开幕式,AI,媒体,64,15400,84,视频号直播,开幕式直播片段带动大会主题讨论,,样例数据：直播型内容互动权重较高。
-2026-05-27,LinkedIn,开幕式,国际合作,嘉宾,23,1800,86,嘉宾动态,International guests share BEYOND Expo opening day,,样例数据：国际嘉宾扩散。
-2026-05-27,新闻/网站,开幕式,国际合作,媒体,31,2400,82,行业媒体,澳门科技展会开幕，吸引多国企业与投资机构,,样例数据：媒体稿件的基础覆盖。
-2026-05-28,微信,BGlobal Summit,出海,媒体,108,9700,87,产业媒体,"BGlobal Summit 聚焦企业出海、本地化与国际增长",,样例数据：出海议题在中文平台更集中。
-2026-05-28,微博,展区开放,展商故事,观众,126,18200,81,观众帖子,展区首个完整开放日，机器人和智能硬件内容被集中转发,,样例数据：现场观众内容容易形成即时声量。
-2026-05-28,小红书,展区开放,智能硬件,KOL/创作者,94,22600,89,探展笔记,"BEYOND Expo 探展：AI 眼镜、机器人、生活方式科技",,样例数据：探展型内容适合图片和短视频平台。
-2026-05-28,抖音,BGlobal新品发布,智能硬件,参展商,91,38400,86,参展商短视频,新品发布现场剪辑带动智能硬件关注,,样例数据：短视频互动量高，需单独看播放和转评赞。
-2026-05-28,视频号,BGlobal新品发布,低空经济,参展商,58,17600,84,企业视频号,eVTOL 与低空出行产品在新品发布环节亮相,,样例数据：低空经济内容有明确产品记忆点。
-2026-05-28,LinkedIn,国际科技论坛,国际合作,嘉宾,49,4200,90,论坛嘉宾,Asia-Europe tech collaboration discussed at BEYOND Expo,,样例数据：国际论坛在 LinkedIn 更容易沉淀专业关系。
-2026-05-28,X,国际科技论坛,Web3,KOL/创作者,42,5100,76,Web3 社群账号,Web2+3 Commerce Forum highlights stablecoin and cross-border payments,,样例数据：Web3 内容容易出现讨论分化，需关注情绪。
-2026-05-28,YouTube,BGlobal新品发布,智能硬件,官方/主办方,28,6900,85,官方直播回放,BGlobal Product Launch replay,,样例数据：长视频适合做会后沉淀。
-2026-05-28,微信,Creator Summit,创作者经济,KOL/创作者,61,8300,83,创作者公众号,Creator Summit 讨论内容生产与商业化路径,,样例数据：创作者议题适合拉 KOL 二次传播。
-2026-05-28,新闻/网站,Fund At First Pitch,投资路演,投资人,37,2800,79,创投媒体,60 至 180 秒快速路演让项目直接面对投资人,,样例数据：创投内容声量不一定最大，但后续价值高。
-2026-05-29,微信,BEYOND Hack Day,AI,参展商,76,7800,88,开发者社群,Hack Day 项目路演与 AI 创新硬件赛道持续发酵,,样例数据：开发者和创业团队内容偏长尾。
-2026-05-29,B站,展区开放,智能硬件,KOL/创作者,38,14800,87,科技 UP 主,探展 Vlog：AI 硬件与机器人展台合集,,样例数据：视频内容有更长生命周期。
-2026-05-29,小红书,会后社交,展商故事,观众,57,13200,80,现场体验笔记,从展会到晚间活动，BEYOND Expo 社交体验记录,,样例数据：生活方式平台关注现场体验。
-2026-05-29,LinkedIn,Fund At First Pitch,投资路演,投资人,44,3900,85,投资机构动态,Investors share notes from Fund At First Pitch,,样例数据：投资人动态适合形成明年邀约名单。
-2026-05-29,新闻/网站,国际科技论坛,医疗健康,媒体,34,2600,81,医疗科技媒体,未来医疗与功能营养议题在论坛中展开,,样例数据：垂直媒体对细分议题更有价值。
-2026-05-29,X,BEYOND Hack Day,AI,KOL/创作者,29,3300,82,开发者账号,Hack Day projects around embodied AI and hardware,,样例数据：英语技术圈扩散。
-2026-05-30,微信,BEYOND Awards,展商故事,官方/主办方,84,10400,91,官方公众号,BEYOND Awards 获奖项目与企业回顾,,样例数据：Awards 是会后内容资产。
-2026-05-30,视频号,BEYOND Awards,展商故事,参展商,69,21400,90,企业视频号,获奖企业发布现场视频与感谢内容,,样例数据：参展商自传播可放大官方节点。
-2026-05-30,微博,会后社交,创作者经济,观众,48,7600,78,观众帖子,活动收官日现场照片与观众反馈,,样例数据：收官日可监测满意度和问题反馈。
-2026-05-30,LinkedIn,BEYOND Awards,国际合作,嘉宾,53,5600,92,获奖企业与嘉宾,Award winners and partners post event wrap-up notes,,样例数据：适合沉淀国际合作证据。
-2026-05-30,YouTube,BEYOND Awards,AI,官方/主办方,21,5200,86,官方视频,BEYOND Awards highlight reel,,样例数据：会后视频回顾。
-2026-05-31,微信,展区开放,展商故事,媒体,66,6200,84,媒体复盘,BEYOND Expo 2026 展区与重点项目复盘,,样例数据：展会结束后的媒体复盘。
-2026-05-31,小红书,展区开放,智能硬件,观众,39,8800,83,观众笔记,周末整理：最值得记住的 BEYOND Expo 产品,,样例数据：用户体验内容的长尾。
-2026-05-31,LinkedIn,BGlobal Summit,出海,参展商,45,4300,87,参展企业动态,Exhibitors summarize global market meetings after BEYOND Expo,,样例数据：B2B 线索在会后继续出现。
-2026-05-31,新闻/网站,BEYOND Awards,国际合作,媒体,29,2200,82,综合新闻,BEYOND Expo 收官，多项科技创新成果获得关注,,样例数据：新闻端收束报道。
+2026-05-27,官网/新闻稿,BGlobal新品发布,智能硬件,官方/主办方,1,,,BEYOND EXPO 官网,iFLYTEK to Launch AI Glasses at BEYOND Expo 2026,https://www.beyondexpo.com/2026/05/27/iflytek-to-launch-ai-glasses-at-beyond-expo-2026/,公开官网稿，可核验；未公开平台互动量和情绪口径。
+2026-05-27,官网/新闻稿,BGlobal新品发布,智能硬件,官方/主办方,1,,,BEYOND EXPO 官网,BGlobal New Product Launch: 11 Top Tech Companies to Debut Next-Generation Innovations,https://www.beyondexpo.com/2026/05/27/bglobal-new-product-launch-11-top-tech-companies-to-debut-next-generation-innovations-to-the-world-at-beyond-expo-2026/,公开官网稿，可核验；说明 BGlobal 新品发布阵容，未公开互动量。
+2026-05-27,微信,展区开放,国际合作,参展商,1,,,关于横琴,横琴科技企业组团赴澳!亮相 BEYOND Expo 2026,,"搜狗微信搜索第 8 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：横琴近 40 家本土科技企业、科研机构,组团奔赴澳门,参加第六届 BEYOND 国际科技创新博览会(BEYOND Expo 2026).作为粤..."
+2026-05-27,微信,展区开放,机器人,参展商,1,,,人形机器人孵化器,邀请函| 2026澳门BEYOND EXPO2026 -上海市人形机器人创新孵化器专区,,搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。
+2026-05-27,微信,展区开放,AI,参展商,1,,,邵志敏观察,BEYOND EXPO前瞻:AI不止在屏幕里,,"搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：今天是 BEYOND Expo 2026 开展前夕的媒体日活动,提前看到了一些创新科技产品.现场很有意思,很多产品就是一个个正在走向真..."
+2026-05-27,微信,展区开放,国际合作,参展商,1,,,深圳模力营AI生态社区,"模力舞台 | 集结20+新锐企业力量,亮相澳门 BEYOND Expo 2026",,"搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026年5月27日至30日,亚洲最大的科技创新和生态博览会 BEYOND Expo 2026于澳门威尼斯人金光会展中心盛大启幕.本届大会以..."
+2026-05-27,微信,Fund At First Pitch,投资路演,参展商,1,,,珠海先进集成电路研究院,"全攻略|数实共生风暴来袭!BEYOND Expo 2026终极通关指南,看这一篇就够了!",,"搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026 的现场,共同见证这些极具社会责任感、即将颠覆人类未来生活方式的硬核创新力量!极限速投这绝不是一场普..."
+2026-05-27,微信,开幕式,国际合作,官方/主办方,1,,,BEYOND Expo,"聚焦AI从数字走向物理世界,BEYOND Expo 2026盛大开幕",,"搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026开幕式在澳门巴黎人酒店·巴黎人剧场举行,正式拉开大会帷幕.本届博览会以“AI:数实共生“为主题,聚焦人..."
+2026-05-27,微信,展区开放,医疗健康,参展商,1,,,Peek膝关节,"中科医材参展 BEYOND Expo 2026|链接全球创新生态,共探未来医疗科技",,"搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026,于澳门威尼斯人金光会展 Hall A-C|SK-617 展台,与来自全球的科技企业、创业者、投资机构及产业伙伴共同参..."
+2026-05-27,新闻/网站,开幕式,AI,媒体,1,,,澳門週報,AI數實共生 鏈接全球創新！BEYOND Expo 2026在澳門盛大啟幕,https://weeklymacao.com/detail/480,港澳本地媒体公开报道，可核验；页面显示阅读量但未纳入互动口径。
+2026-05-27,新闻/网站,开幕式,智能硬件,媒体,1,,,TechNode,"At BEYOND Expo 2026, XREAL CEO predicts an iPhone moment for AI glasses",https://technode.com/2026/05/27/at-beyond-expo-2026-xreal-ceo-predicts-an-iphone-moment-for-ai-glasses/,TechNode 公开报道，可核验；未公开阅读、分享或评论数据。
+2026-05-27,新闻/网站,BGlobal新品发布,AI,媒体,1,,,TechNode,From video understanding to edge deployment Om AI targets real-world AI,https://technode.com/2026/05/27/from-video-understanding-to-edge-deployment-om-ai-targets-real-world-ai/,TechNode 公开报道，可核验；未公开阅读、分享或评论数据。
+2026-05-27,新闻/网站,开幕式,AI,媒体,1,,,TNGlobal,AI: digital to physical – the 6th BEYOND EXPO is set to open in Macau,https://technode.global/2026/05/27/ai-digital-to-physical-the-6th-beyond-expo-is-set-to-open-in-macau/,TNGlobal 公开报道/媒体合作稿，可核验；未公开互动量。
+2026-05-27,小红书,展区开放,AI,KOL/创作者,1,29,,Olivia奥莉杨,谁在🌟澳门Beyond Expo AI科技展,https://www.rednote.com/explore/6a15a4080000000037034abc,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：29；日期按页面显示“6天前”折算。
+2026-05-27,小红书,展区开放,展商故事,KOL/创作者,1,2179,,超级Dunk,拒绝看热闹！BEYOND Expo2026前沿速递,https://www.rednote.com/explore/6a150274000000000702ef49,小红书网页版人工采集；补搜关键词「beyondexpo2026」；页面显示互动：2179；日期按页面显示“6天前”折算。
+2026-05-27,LinkedIn,展区开放,AI,参展商,1,28,,InnoX Shenzhen,30 Shenzhen startups bring AI + hardware products to BEYOND Expo 2026,https://www.linkedin.com/company/beyond-expo,LinkedIn 公开公司页采样；BEYOND Expo 转发 InnoX Shenzhen 更新，页面显示“6d”，按 2026-06-02 折算为 5月27日；公开 reactions：28；非原帖直链，按公司页更新核验。
+2026-05-27,LinkedIn,展区开放,AI,参展商,1,30,,Nikoloz Turazashvili / Vexrail,Vexrail public launch at BEYOND Expo 2026,https://www.linkedin.com/company/beyond-expo,LinkedIn 公开公司页采样；BEYOND Expo 转发 Vexrail 创始人更新，页面显示“6d”，按 2026-06-02 折算为 5月27日；公开 reactions：30，另显示 12 comments；非原帖直链。
+2026-05-28,微信,展区开放,国际合作,参展商,1,,,倍联德实业,"算力出海,亮相国际 | 倍联德受邀参展 BEYOND Expo 2026,携锐影工作站登陆澳门国际科技盛会",,"搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026 年 5 月 27 日 - 30 日,第六届 BEYOND 国际科技创新博览会(BEYOND Expo 2026)于澳门威尼斯人金光会展中心盛大启幕.."
+2026-05-28,微信,展区开放,国际合作,参展商,1,,,看到科技,AI赋能高效协作:看到科技多款会议产品亮相BEYOND Expo 2026,,"搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：日,亚洲极具影响力的年度科技盛会 —— BEYOND Expo 2026 于中国澳门盛大举行.本届博览会以 “AI:数实共生“ 为核心主题,..."
+2026-05-28,微信,开幕式,国际合作,媒体,1,,,有新Newin,BEYOND Expo 2026:AI 开始进入真实场景,,"搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5 月 27 日,BEYOND Expo 2026 在澳门开幕.今年大会主题是“AI:数实共生“.相比 2025 年“赋能亚洲,连接世界“,今年的讨..."
+2026-05-28,微信,展区开放,国际合作,参展商,1,,,珠海高新区,特首到访!珠海高新区硬核科技亮相2026 BEYOND EXPO,,"搜狗微信搜索第 8 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日,亚洲规模最大、影响力最广的国际科技创新盛会——BEYOND Expo 2026在澳门威尼斯人金光会展中心启幕.本届展会以“..."
+2026-05-28,微信,展区开放,智能硬件,参展商,1,,,AINGOODS硬集谷,"在BEYOND Expo,我们看到智能硬件未来的更多可能...",,"搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：国际科技创新博览会(BEYOND Expo 2026)在中国澳门举办.笔者在第一时间来到了现场,给即将到场的朋友们做一次前瞻,也给未..."
+2026-05-28,微信,展区开放,智能硬件,官方/主办方,1,,,BEYOND Expo,"讯飞AI眼镜亮相BEYOND Expo 2026,拓展AI终端走向真实场景新路径",,"搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026举办场地BEYOND Expo 2026 今年继续在澳门威尼斯人金光会展举办.作为澳门最大的综合度假村营运商,金沙中国有限公司旗..."
+2026-05-28,微信,展区开放,国际合作,KOL/创作者,1,,,CityU生活圈,"亚洲最大科技盛会!BEYOND Expo 2026全攻略,澳门学生免费入场",,"搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日-30日,亚洲规模最大的科技盛会——BEYOND Expo 2026,正在澳门威尼斯人金光会展中心举行.近800家全球科技企业、..."
+2026-05-28,微信,展区开放,智能硬件,媒体,1,,,ShenzhenDaily,Shenzhen takes center stage at Macao expo 深圳闪耀BEYOND Expo 2026:科技创新力量亮相澳门,,搜狗微信搜索第 8 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：Shenzhen exhibition area during BEYOND Expo 2026 in Macao today. Shenzhen startu
+2026-05-28,小红书,展区开放,AI,KOL/创作者,1,3,,龚海瀚,持续关注 BEYOND Expo 2026,https://www.rednote.com/explore/6a16df6e000000000803ceed,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：3；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,媒体,1,13,,雷科技,这个科技博览会杀疯了！谁说澳门只有娱乐场,https://www.rednote.com/explore/6a16b5060000000036030e81,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：13；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,KOL/创作者,1,18,,南山区老干部,来澳门参展喽,https://www.rednote.com/explore/6a17135800000000360328a3,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：18；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,KOL/创作者,1,3,,清华怡姐说税,有来澳门beyond expo的朋友吗,https://www.rednote.com/explore/6a16ee4d000000003501ca64,小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：3；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,KOL/创作者,1,11,,山河野人记,澳门初探 | 当我被吸入这欢乐场,https://www.rednote.com/explore/6a1712d800000000350291bb,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：11；日期按页面显示“5天前”折算。
+2026-05-28,小红书,开幕式,AI,KOL/创作者,1,6,,殷晓玥Victoria,2026Beyond Expo开幕式,https://www.rednote.com/explore/6a16a78f0000000006023ce4,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：6；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,AI,参展商,1,1,,Dana科技猎头Young Boss,Beyond Expo2026 Opening Ceremony,https://www.rednote.com/explore/6a1789fd000000003601b5df,小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：1；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,参展商,1,43,,Wilo,澳门见！Wilo诚邀共赴BEYOND Expo,https://www.rednote.com/explore/6a15176f000000000803f670,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：43；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,参展商,1,32,,Cyan Amoo,Beyond Expo开展仅剩1天⏳ Amoo送门票了！,https://www.rednote.com/explore/6a16a78d0000000006034cd5,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：32；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,参展商,1,16,,ApexFlow,有在澳门 BEYOND Expo 现场的朋友吗？,https://www.rednote.com/explore/6a16a1ce00000000070299a2,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：16；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,AI,参展商,1,15,,暗壳AI,BEYOND Expo 2026 现场见！,https://www.rednote.com/explore/6a16bd8d00000000080314d5,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：15；日期按页面显示“5天前”折算。
+2026-05-28,小红书,展区开放,展商故事,KOL/创作者,1,11,,Kenhsu01,Beyond Expo 2026 首日全记录🔥,https://www.rednote.com/explore/6a171e9d0000000006035704,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：11；日期按页面显示“5天前”折算。
+2026-05-28,新闻/网站,开幕式,AI,媒体,1,,,大湾区时报,BEYOND Expo 2026國際科技創新博覽會在澳門盛大開幕,https://www.baytvs.com/guoji/gsdt/20260528/6989.html,港澳/大湾区媒体公开报道，可核验；未公开互动量。
+2026-05-28,新闻/网站,开幕式,智能硬件,媒体,1,,,新浪财经,让讯飞、XREAL、普渡畅谈AI硬件未来，澳门Beyond展会什么来头？,https://finance.sina.cn/stock/jdts/2026-05-28/detail-inhzmtwq8609776.d.html,新浪财经公开报道，可核验；未公开互动量。
+2026-05-28,新闻/网站,BGlobal新品发布,创作者经济,媒体,1,,,TechNode,Ziyouliangji aims to use AI music platform Hitto to turn everyone into a song creator,https://technode.com/2026/05/28/ziyouliangji-aims-to-use-ai-music-platform-hitto-to-turn-everyone-into-a-song-creator/,TechNode 公开报道，可核验；未公开阅读、分享或评论数据。
+2026-05-28,新闻/网站,BGlobal新品发布,智能硬件,媒体,1,,,TNGlobal,iFLYTEK to launch AI glasses at BEYOND Expo 2026,https://technode.global/2026/05/28/iflytek-to-launch-ai-glasses-at-beyond-expo-2026/,TNGlobal 公开转载/报道，可核验；未公开互动量。
+2026-05-28,LinkedIn,BGlobal新品发布,智能硬件,官方/主办方,1,18,,BEYOND Expo,Global Launches. 11 Products. One Afternoon.,https://www.linkedin.com/company/beyond-expo,LinkedIn 公开公司页采样；页面显示“5d Edited”，按 2026-06-02 折算为 5月28日；公开 reactions：18；内容指向 BGlobal Product Launch 直播预告。
+2026-05-28,LinkedIn,展区开放,AI,参展商,1,,,Vexrail,Meet Vexrail Founder & CEO at BEYOND Expo 2026 Booth SK001,https://sg.linkedin.com/company/vexrail,LinkedIn 公开公司页采样；Vexrail 页面显示“5d”，按 2026-06-02 折算为 5月28日；公开页未显示可核验互动数。
+2026-05-29,官网/新闻稿,国际科技论坛,Web3,参展商,1,,,PR Newswire / KuCoin,KuCoin CMO at BEYOND Expo: Trust Is Becoming the New Infrastructure for Web3,https://www.prnewswire.com/news-releases/kucoin-cmo-at-beyond-expo-trust-is-becoming-the-new-infrastructure-for-web3-302785553.html,参展/论坛企业新闻稿源站，可核验；未公开社交互动量。
+2026-05-29,官网/新闻稿,BEYOND Awards,智能硬件,参展商,1,,,PR Newswire / Makera,"Makera Showcases Z1 at BEYOND Expo 2026, Wins Best of Innovation Award",https://www.prnewswire.com/apac/news-releases/makera-showcases-z1-at-beyond-expo-2026-wins-best-of-innovation-award-for-making-precision-cnc-more-accessible-302784945.html,获奖企业新闻稿源站，可核验；未公开社交互动量。
+2026-05-29,微信,展区开放,国际合作,参展商,1,,,艾菲尔香港科技,Beyond Expo 2026 澳门,,"搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026年5月27日至30日,亚洲规模最大的科技创新与生态博览会BEYOND Expo 2026将在中国澳门威尼斯人金光会展中心举办...."
+2026-05-29,微信,展区开放,国际合作,参展商,1,,,宸境科技,让机器看懂世界:宸境科技携三大核心产品亮相 BEYOND Expo 2026,,"搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月28日,宸境科技正式亮相澳门BEYOND国际科技创新博览会(BEYOND Expo).作为亚洲最具影响力的科技盛会之一,BEYOND ..."
+2026-05-29,微信,BEYOND Awards,智能硬件,参展商,1,,,出门问问AIGC,出门问问TicNote Pods 4G AI录音耳机荣获 BEYOND Expo 2026 Best of Innovation Awards,,"搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo是亚洲规模最大的国际科技博览会之一,本届汇聚... 2026荣获＂Best of Kickstarter＂之后,TicNote Pods"
+2026-05-29,微信,展区开放,国际合作,媒体,1,,,高維引力,"在澳門,看見AI從「數字」走向「物理」——BEYOND Expo 2026現場觀察",,"搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日至30日,第六屆BEYOND Expo在澳門威尼斯人金光會展... 2026上拿到22萬個讚,被Yahoo、Engadget等40多家媒體報導...."
+2026-05-29,微信,BEYOND Awards,机器人,参展商,1,,,灵童机器人,灵童机器人澳门首秀!斩获 BEYOND Expo 2026 创新大奖,,"搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：灵童机器人首次登陆澳门BEYOND Expo 2026,灵童机器人便以全球最小60cm自主行走桌面人形机器人惊艳国际舞台,并从全球800余..."
+2026-05-29,微信,开幕式,国际合作,参展商,1,,,龙岗企服,"BEYOND Expo 2026即将开幕,龙岗展团产品清单请查收",,搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026年5月27日-30日第六届BEYOND国际科技创新博览会将在澳门威尼斯人金光会展中心盛大举办本届展会以「AI:数实共生」为主...
+2026-05-29,微信,展区开放,智能硬件,参展商,1,,,莫界科技,"莫界受邀出席 BEYOND Expo 2026,彰显光学硬实力",,"搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：近日,全球顶尖科技创新盛会 BEYOND Expo 2026 在澳门威尼斯人金光会展中心盛大启幕,莫界凭借 AI+AR 光学领域的顶尖硬实力,..."
+2026-05-29,微信,展区开放,机器人,参展商,1,,,全球首家人工智能6S店,"人工智能6S店携自研智能体盒子LongMini 亮相BEYOND Expo 2026,解码AI硬件出海新范式",,"搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月28日,第六届BEYOND国际科技创新博览会(BEYOND Expo 2026)的聚光灯下,由深圳市龙岗区人工智能(机器人)署主办、全..."
+2026-05-29,微信,开幕式,国际合作,媒体,1,,,特科技时尚,AI数实共生 迈向物理世界——BEYOND Expo 2026在澳门盛大开幕,,"搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日下午,BEYOND Expo 2026国际科技创新博览会开幕式在澳门巴黎人酒店·巴黎人剧场隆重举行.本届博览会以“AI:数实共..."
+2026-05-29,微信,开幕式,机器人,媒体,1,,,亿邦产业,BEYOND Expo 2026:机器人、智能眼镜、Agent 物理AI如何落地?,,"搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：文丨吕哲彤如果说,过去两年的AI叙事更多围绕大模型、算力和应用入口展开,那么在BEYOND Expo 2026开幕式上,我们注意到,..."
+2026-05-29,微信,展区开放,国际合作,参展商,1,,,珠西博士科技创新服务平台,【活动报名】江门市高才会联合博士科技:诚邀参加2026 BEYOND EXPO国际科技创新博览会,,"搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND EXPO 2026简介中文版.pdf扫描下方海报二维码添加微信,备注 「姓名+单位」,欢迎各位积极报名,共赴澳门,见证科技未..."
+2026-05-29,微信,国际科技论坛,国际合作,官方/主办方,1,,,BEYOND Expo,"岑浩辉到BEYOND Expo 2026展区调研,支持本澳创新科技持续发展",,"搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026通过展览展示、论坛讨论和商务洽谈,让前沿技术、产业应用和国际合作需求在澳门集中交流,也为粤港澳大湾区..."
+2026-05-29,微信,展区开放,机器人,官方/主办方,1,,,BEYOND Expo,机器人在线猜拳、AR测肤、低空飞行......来BEYOND Expo 2026提前过一把“未来生活“,,搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026展区在澳门威尼斯人金光会展持续开启.近800家国际参展企业围绕AI大模型与数字基础设施、具身智能与机器人...
+2026-05-29,微信,展区开放,AI,KOL/创作者,1,,,Cynthia的奇妙冒险,Beyond Expo 2026,,"搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：今年这里像“家门口的CES“,但更务实——没有那么多＂未来已来＂的宏大叙事,满场都是＂这个到底怎么落地＂的真问题.和老朋..."
+2026-05-29,微信,开幕式,机器人,媒体,1,,,DoNews,BEYOND Expo 2026观察:AI、眼镜和机器人,,"搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：撰文 | 程书书编辑 | 李信马题图 | BEYOND Expo 2026大会在BEYOND Expo 2026开幕式上,BEYOND Expo 联合创始人贺建"
+2026-05-29,微信,展区开放,国际合作,参展商,1,,,MEIKE 美刻,Meike美刻亮相BEYOND Expo 2026,,"搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND EXPO 2026澳门,2026年5月27日 —— 第六届BEYOND国际科技创新博览会(BEYOND Expo 2026)在澳门威尼斯人金光.."
+2026-05-29,小红书,展区开放,智能硬件,KOL/创作者,1,21,,阿卡姆之花,澳门特首岑浩辉先生BEYONDExpo首日观展,https://www.rednote.com/explore/6a17fe310000000007020081,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：21；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,Web3,KOL/创作者,1,8,,安哥的商业决策笔记,BEYOND EXPO：发现Token在重估一切,https://www.rednote.com/explore/6a1831e600000000380370ad,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：8；日期按页面显示“4天前”折算。
+2026-05-29,小红书,BGlobal新品发布,智能硬件,媒体,1,5,,半导体AI具身机器人观察,科大讯飞AI眼镜在澳门发布！,https://www.rednote.com/explore/6a17f63c000000000702bb76,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：5；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,AI,媒体,1,2,,科技行者,暴走BEYOND Expo 2026！🚶🏻‍♀️,https://www.rednote.com/explore/6a183a7e0000000036032e76,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：2；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,智能硬件,KOL/创作者,1,118,,王蒂姆,BEYOND首日💻👓 刷新认知科技改变工作流,https://www.rednote.com/explore/6a17ea3e0000000008003ad3,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：118；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,KOL/创作者,1,7,,斜杠中女S姐,参加亚洲最夯的展会是什么感受,https://www.rednote.com/explore/6a18511a0000000038036653,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：7；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,KOL/创作者,1,2,,昕桐｜首席具身官,澳门的 BEYOND 2026 ，“亚洲版CES”?,https://www.rednote.com/explore/6a17ce02000000000603291d,小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：2；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,智能硬件,媒体,1,4,,知外Global AI Growth,智能硬件的AI落地场｜Beyond Expo,https://www.rednote.com/explore/6a182f0c0000000008026720,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：4；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,机器人,KOL/创作者,1,4,,中年少女探索世界,澳门BEYOND Expo到处都是机器人,https://www.rednote.com/explore/6a17b799000000003803776c,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：4；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,KOL/创作者,1,39,,Arc安格增长,在澳门Beyond Expo的第1天，我们看到4️⃣件事,https://www.rednote.com/explore/6a183ef10000000035022770,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：39；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,参展商,1,6,,BoltzLog熵约智能,🇲🇴BEYOND展会的朋友请举手🙋,https://www.rednote.com/explore/6a1806b300000000060306aa,小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：6；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,KOL/创作者,1,26,,Jennie,同在澳门🇲🇴BEYONDExpo科技展会的朋友举手,https://www.rednote.com/explore/6a16642b0000000038034a68,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：26；日期按页面显示“4天前”折算。
+2026-05-29,小红书,BGlobal新品发布,智能硬件,KOL/创作者,1,4,,Johnlin的笔记,科大讯飞发布AI眼镜售价4299元,https://www.rednote.com/explore/6a1864a700000000380238c1,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：4；日期按页面显示“4天前”折算。
+2026-05-29,小红书,国际科技论坛,展商故事,KOL/创作者,1,5,,KL,BEYOND EXPO国际科技创新峰会🥂,https://www.rednote.com/explore/6a1857e60000000008027751,小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：5；日期按页面显示“4天前”折算。
+2026-05-29,小红书,BGlobal新品发布,智能硬件,KOL/创作者,1,9,,V0 的Neo,硬核科技展，被我玩出了度假感⛱️,https://www.rednote.com/explore/6a18180d0000000006032b75,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：9；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,KOL/创作者,1,27,,Weekender+,澳门BEYOND Expo 展览，科技感拉满!,https://www.rednote.com/explore/6a17d9400000000038021860,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：27；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,展商故事,参展商,1,3,,Upsello,BEYOND Expo｜求展位坐标！串门模式开启,https://www.rednote.com/explore/6a17e7c10000000036001eeb,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：3；日期按页面显示“4天前”折算。
+2026-05-29,小红书,展区开放,机器人,KOL/创作者,1,15,,机器人小白,在Beyond Expo，这家机器人被澳门特首“点名”,https://www.rednote.com/explore/6a181fc90000000008025928,小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：15；日期按页面显示“4天前”折算。
+2026-05-29,新闻/网站,BGlobal新品发布,智能硬件,媒体,1,,,华夏时报 / 新浪财经,戴在鼻梁上的“AI助理”：科大讯飞40克眼镜入局，智能穿戴的“刚需时刻”还有多远？,https://finance.sina.com.cn/stock/relnews/cn/2026-05-29/doc-inhzqpth7886421.shtml,新浪财经转载华夏时报公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,开幕式,机器人,媒体,1,,,经济观察报 / 新浪财经,BEYOND Expo 2026观察：AI硬件火爆，中东主权基金开始筛选中国公司,https://finance.sina.com.cn/stock/t/2026-05-29/doc-inhzpspr9557180.shtml,新浪财经转载经济观察报公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,BGlobal新品发布,智能硬件,媒体,1,,,上观新闻 / 新浪财经,40克机身+超级AI助理，讯飞AI眼镜发布！“百镜大战”迎“重磅玩家”,https://finance.sina.com.cn/stock/t/2026-05-29/doc-inhzpfxv9623332.shtml,新浪财经转载上观新闻公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,BGlobal新品发布,智能硬件,媒体,1,,,新浪科技,讯飞AI眼镜发布：整机仅重40克，售价4299元,https://finance.sina.com.cn/tech/shenji/2026-05-29/doc-inhzpwvq7979618.shtml,新浪科技公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,展区开放,医疗健康,媒体,1,,,新浪数码,英伟达、腾讯、阿里、华为、金茉亮相“亚洲CES”BEYOND国际科技创新博览会，共话科技创新,https://finance.sina.com.cn/tech/elec/xpfb/2026-05-29/doc-inhzpwvs0887955.shtml,新浪数码公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,开幕式,机器人,媒体,1,,,DoNews / 新浪财经,BEYOND Expo 2026观察：AI、眼镜和机器人,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzqimi9426592.shtml,新浪科技转载 DoNews 公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,BEYOND Awards,投资路演,媒体,1,,,IT之家,清智系企业亮相 BEYOND Expo 2026 并斩获多项大奖,https://www.ithome.com/0/957/142.htm,IT之家公开报道，可核验；未公开互动量。
+2026-05-29,新闻/网站,BGlobal新品发布,智能硬件,媒体,1,,,TechNode,iFlytek launches 40g AI glasses with GlassClaw AI agent and advanced noise recognition,https://technode.com/2026/05/29/iflytek-launches-40g-ai-glasses-with-glassclaw-ai-agent-and-advanced-noise-recognition/,TechNode 公开报道，可核验；未公开阅读、分享或评论数据。
+2026-05-29,新闻/网站,BGlobal新品发布,AI,媒体,1,,,TechNode,Lenovo Innovation Accelerator channels ecosystem power to bring Chinese hard-tech startups to the global stage,https://technode.com/2026/05/29/lenovo-innovation-accelerator-channels-ecosystem-power-to-bring-chinese-hard-tech-startups-to-the-global-stage/,TechNode 公开报道，可核验；未公开阅读、分享或评论数据。
+2026-05-29,新闻/网站,展区开放,AI,媒体,1,,,Xinhua,Economic Watch: Real-world AI applications shine at Macao's leading high-tech expo,https://english.news.cn/20260529/73b5659a46f94dc6ba9fc4ba88f4eb3d/c.html,新华社英文公开报道，可核验；未公开页面互动量。
+2026-05-29,LinkedIn,BGlobal新品发布,智能硬件,官方/主办方,1,4,,BEYOND Expo,iFlytek Product Launch is live NOW,https://www.linkedin.com/company/beyond-expo,LinkedIn 公开公司页采样；页面显示“4d”，按 2026-06-02 折算为 5月29日；公开 reactions：4；内容为 iFlytek Product Launch 直播提醒。
+2026-05-29,LinkedIn,国际科技论坛,AI,参展商,1,4,,GameBot,GameBot to join Future of Play Forum at BEYOND Expo 2026 in Macao,https://www.linkedin.com/company/gamebotai/posts/,LinkedIn 登录态站内搜索采样；关键词「BEYOND Expo May 29」；页面显示“4 天”，按 2026-06-02 折算为 5月29日；公开 reactions：4，另显示 1 次转发。
+2026-05-29,LinkedIn,国际科技论坛,出海,投资人,1,20,,Headline - Asia,Akio T. joins BEYOND Expo panels on Asian founders and hard tech investment,https://www.linkedin.com/company/headline-asia/posts/,LinkedIn 登录态站内搜索采样；关键词「BEYOND Expo May 29」；页面显示“4 天”，按 2026-06-02 折算为 5月29日；公开 reactions：20，另显示 1 次转发。
+2026-05-29,LinkedIn,BGlobal Summit,国际合作,媒体,1,1,,TNGlobal,TNGlobal recap includes BEYOND Expo BGlobal and product launch items,https://www.linkedin.com/company/technodeglobal/posts/,LinkedIn 登录态站内搜索采样；关键词「BGlobal BEYOND Expo」；页面显示“4 天”，按 2026-06-02 折算为 5月29日；公开 reactions：1；该动态为 TNGlobal 周报，包含 BEYOND Expo 开幕和 BGlobal 新品发布两条链接。
+2026-05-30,官网/新闻稿,开幕式,AI,官方/主办方,1,,,PR Newswire / BEYOND Expo,聚焦AI从数字走向物理世界，BEYOND Expo 2026盛大开幕,https://www.prnasia.com/story/535123-1.shtml,BEYOND Expo 中文新闻稿源站，可核验；未公开社交互动量。
+2026-05-30,微信,展区开放,国际合作,嘉宾,1,,,德勤Deloitte,德勤特邀嘉宾参观团走进BEYOND Expo 2026,,"搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：德勤中国组织“德勤中国特邀嘉宾参观团“参与BEYOND国际科技创新博览会(BEYOND Expo 2026).本次共组建数个嘉宾团组,..."
+2026-05-30,微信,展区开放,机器人,参展商,1,,,具身智能机器人世界,"腾讯具身智能技术矩阵亮相BEYOND Expo 2026 不造机器人,做机器人的“钛螺丝“",,"搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：具身智能产业化提速之际,5月28日,腾讯Robotics X实验室与福田实验室携多项重磅技术现身澳门BEYOND Expo 2026展览,机器人..."
+2026-05-30,微信,会后社交,国际合作,参展商,1,,,筷子科技Kuaizi,BEYOND Expo 2026 圆满收官:筷子科技以“视频商业智能体系统“赋能Physical,,"搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月30日,为期四天的第六届 BEYOND 国际科技创新博览会(BEYOND Expo 2026)在澳门威尼斯人金光会展中心圆满落下帷幕.智..."
+2026-05-30,微信,国际科技论坛,国际合作,KOL/创作者,1,,,陆易斯,"从澳门beyond expo 2026归来,相比去年,感觉今年太多的国内公司参展了,三天实际上还有一些看不过来,不少分论坛很精彩要听回放",,"搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：从澳门beyond expo 2026归来,相比去年,感觉今年太多的国内公司参展了,三天实际上还有一些看不过来,不少分论坛很精彩要听回..."
+2026-05-30,微信,展区开放,国际合作,参展商,1,,,太希智能科技,太希智能闪耀BEYOND EXPO 2026!,,搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：寄予厚望BEYOND EXPO 202601澳门特别行政区行政长官岑浩辉、澳门特别行政区第五任行政长官贺一诚先后到访太希智能展台.(...
+2026-05-30,微信,展区开放,AI,KOL/创作者,1,,,小周晓谈,BEYOND EXPO 2026[强],,搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND EXPO 2026[强]
+2026-05-30,微信,展区开放,机器人,KOL/创作者,1,,,芸姐AI实训基地-收徒,"参加BEYOND Expo 2026 澳门国际科创博览会,满眼硬核黑科技;",,"搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：参加BEYOND Expo 2026 澳门国际科创博览会,满眼硬核黑科技;人形机器人、智能移动平台、协作机械臂、AI生态齐亮相;从全球..."
+2026-05-30,微信,会后社交,国际合作,官方/主办方,1,,,BEYOND Expo,亚洲第一!BEYOND Expo 2026 圆满收官,,"搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026媒体日也在大会首日汇聚200余家全球媒体、KOL、YouTuber及内容创作者,总粉丝量高达2600万,海外媒体占比..."
+2026-05-30,微信,展区开放,国际合作,官方/主办方,1,,,BEYOND Expo,"从澳门到深圳:BEYOND Expo 2026精彩延续,南山创新闪耀双城",,"搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：(BEYOND Expo 2026)在澳门隆重举行.本届大会以 “AI:数实共生“为主题,持续收获全球科技圈的高度关注,四天展期内,共..."
+2026-05-30,微信,开幕式,AI,官方/主办方,1,,,BEYOND Expo,"全攻略|数实共生风暴来袭!BEYOND Expo 2026终极通关指南,看这一篇就够了!",,"搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026 开幕式即将盛大开启!作为 BEYOND Expo 全年最具代表性的核心环节,本届开幕式将于5月27日 15:30至17:30."
+2026-05-30,微信,会后社交,国际合作,参展商,1,,,ZPilot,"BEYOND Expo 2026 完美闭幕:在全球科技现场,看见中国消费科技的新表达",,"搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026 年 5 月 30 日,为期四天的 BEYOND Expo 2026 在澳门威尼斯人金光会展中心圆满落幕.作为亚洲规模最大、影响力最广的国际..."
+2026-05-30,小红书,BGlobal新品发布,智能硬件,媒体,1,4,,21世纪经济报道,AI眼镜也能接入“龙虾”了,https://www.rednote.com/explore/6a19032d0000000036030e18,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：4；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,机器人,KOL/创作者,1,8,,500熊,想拍一个澳门BEYOND科技展机器人特辑,https://www.rednote.com/explore/6a1930d0000000000803caed,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：8；日期按页面显示“3天前”折算。
+2026-05-30,小红书,BGlobal新品发布,智能硬件,KOL/创作者,1,,,龚海瀚,在澳门和讯飞 AI 眼镜重逢,https://www.rednote.com/explore/6a19290e0000000007026802,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：赞；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,展商故事,KOL/创作者,1,484,,果子bibibi,97年市场总监工作日记🇲🇴澳门Beyond Expo,https://www.rednote.com/explore/6a195a160000000008000535,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：484；日期按页面显示“3天前”折算。
+2026-05-30,小红书,BGlobal新品发布,智能硬件,KOL/创作者,1,,,江瀚视野,讯飞AI眼镜正式发布，讯飞眼镜的优势何在？,https://www.rednote.com/explore/6a195ca20000000007022f43,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：赞；日期按页面显示“3天前”折算。
+2026-05-30,小红书,BGlobal新品发布,智能硬件,媒体,1,,,科技行者,AI眼镜的风，终究是吹到了科大讯飞,https://www.rednote.com/explore/6a19877d0000000038035457,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：赞；日期按页面显示“3天前”折算。
+2026-05-30,小红书,会后社交,展商故事,KOL/创作者,1,426,,懒懒小卡比,BEYOND高能回顾｜在澳门看到未来,https://www.rednote.com/explore/6a194a37000000000702048f,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：426；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,AI,KOL/创作者,1,7,,唐月明,BEYOND 2026越来越好，明天下午1：45 AI音乐,https://www.rednote.com/explore/6a19aab60000000008027618,小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：7；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,展商故事,KOL/创作者,1,3,,兔儿小爷,AI+科技多模态｜澳门Beyond Expo展,https://www.rednote.com/explore/6a195cc10000000035021fd6,小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：3；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,展商故事,KOL/创作者,1,28,,馅儿,2026澳门beyond expo观察（02）,https://www.rednote.com/explore/6a18f3ec0000000035024209,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：28；日期按页面显示“3天前”折算。
+2026-05-30,小红书,BGlobal新品发布,智能硬件,官方/主办方,1,6,,BEYOND国际科技创新博览会,讯飞AI眼镜新品发布｜AI终端真的走进现实了,https://www.rednote.com/explore/6a1977c60000000036000935,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：6；日期按页面显示“3天前”折算。
+2026-05-30,小红书,开幕式,AI,官方/主办方,1,45,,BEYOND国际科技创新博览会,BEYOND Expo 2026 盛大开幕,https://www.rednote.com/explore/6a191b89000000000702ca0a,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：45；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,AI,KOL/创作者,1,5,,Cynthia Yang在Realtime AI,Beyond Expo 2026｜AI：digital to physical,https://www.rednote.com/explore/6a19638f000000000800002f,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：5；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,展商故事,KOL/创作者,1,4,,Léo,去澳门BeyondExpo长见识了,https://www.rednote.com/explore/6a19831f0000000006023757,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：4；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,机器人,KOL/创作者,1,14,,Lexiccc,这个机器人有点好抱,https://www.rednote.com/explore/6a1925320000000035032cf8,小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：14；日期按页面显示“3天前”折算。
+2026-05-30,小红书,BEYOND Hack Day,AI,KOL/创作者,1,9,,Parker很爱玩,Macao Hackathon🎉,https://www.rednote.com/explore/6a1924d30000000035032b23,小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：9；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,展商故事,KOL/创作者,1,7,,奶油米,Beyond expo🇲🇴,https://www.rednote.com/explore/6a19de14000000003803543c,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：7；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,展商故事,KOL/创作者,1,1,,A陈小申,参加亚洲最牛的展会是什么感受,https://www.rednote.com/explore/6a192a110000000006020a9b,小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：1；日期按页面显示“3天前”折算。
+2026-05-30,小红书,展区开放,机器人,KOL/创作者,1,1,,痛痛痛洒湖~,这咖啡机器人帅爆🎉,https://www.rednote.com/explore/6a190164000000001002d000,小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：1；日期按页面显示“3天前”折算。
+2026-05-30,新闻/网站,展区开放,机器人,媒体,1,,,财联社 / 新浪财经,AI走向物理世界的“临门一脚”还差什么？｜直击BEYOND Expo 2026,https://finance.sina.com.cn/stock/t/2026-05-30/doc-inhzswye6930112.shtml,新浪财经转载财联社公开报道，可核验；未公开互动量。
+2026-05-30,新闻/网站,BGlobal新品发布,创作者经济,参展商,1,,,新浪财经,BEYOND Expo 2026现场：联汇科技Om AI首发的OttoBox视频创作助理，把视频粗剪从8小时拉进30分钟,https://finance.sina.com.cn/stock/t/2026-05-30/doc-inhzrzus0292319.shtml,新浪财经公开报道，可核验；未公开互动量。
+2026-05-30,新闻/网站,开幕式,机器人,嘉宾,1,,,AGV网 / 新浪财经,普渡机器人创始人张涛出席BEYOND Expo开幕式，共话“数实共生”下的Physical AI路径,https://finance.sina.com.cn/roll/2026-05-30/doc-inhzrreu7455900.shtml,新浪财经转载 AGV 网公开报道，可核验；未公开互动量。
+2026-05-30,新闻/网站,展区开放,AI,媒体,1,,,People's Daily Online / Xinhua,Real-world AI applications shine at Macao's leading high-tech expo,https://en.people.cn/n3/2026/0530/c90000-20462208.html,人民网英文转载新华社公开报道，可核验；未公开互动量。
+2026-05-30,新闻/网站,BGlobal新品发布,智能硬件,媒体,1,,,Yanko Design,"Translation, Prompting, Agentic AI, all in 40 grams: iFLYTEK's Smart Glasses Debut at BEYOND Expo 2026",https://www.yankodesign.com/2026/05/30/translation-prompting-agentic-ai-all-in-40-grams-iflyteks-smart-glasses-debut-at-beyond-expo-2026/,Yanko Design 公开报道，可核验；未公开页面互动量。
+2026-05-30,LinkedIn,展区开放,机器人,媒体,1,8,,TNGlobal,Astribot at BEYOND Expo 2026: robotics and physical AI from Macau,https://www.linkedin.com/company/beyond-expo,LinkedIn 公开公司页采样；BEYOND Expo 转发 TNGlobal 更新，页面显示“3d Edited”，按 2026-06-02 折算为 5月30日；公开 reactions：8；非原帖直链。
+2026-05-30,LinkedIn,会后社交,国际合作,媒体,1,5,,BEAMSTART,"BEYOND Expo drew 1,200+ global companies and 400+ speakers to Macao",https://www.linkedin.com/posts/beamstart_beyond-expo-one-of-asias-largest-technology-activity-7465967535407071233-hq7r,LinkedIn 公开帖子页采样；页面显示“3d”，按 2026-06-02 折算为 5月30日；公开 reactions：5，另显示 3 comments。
+2026-05-30,LinkedIn,国际科技论坛,Web3,媒体,1,2,,HK Business Wire,KuCoin CMO at BEYOND Expo: Trust Is Becoming the New Infrastructure for Web3,http://hkbusinesswire.com/kucoin-cmo-at-beyond-expo-trust-is-becoming-the-new-infrastructure-for-web3/,LinkedIn 登录态站内搜索采样；关键词「BEYOND Expo May 29」；页面显示“3 天”，按 2026-06-02 折算为 5月30日；公开 reactions：2；原帖分享外部新闻稿链接。
+2026-05-31,官网/新闻稿,会后社交,AI,官方/主办方,1,,,PR Newswire / BEYOND Expo,AI: Digital to Physical | BEYOND Expo 2026 Leads Transformative Global Direction of Tech,https://www.prnewswire.com/apac/news-releases/ai-digital-to-physical--beyond-expo-2026-leads-transformative-global-direction-of-tech-302786386.html,BEYOND Expo 会后英文新闻稿，可核验；未公开社交互动量。
+2026-05-31,微信,展区开放,国际合作,参展商,1,,,对外贸易促进中心,BEYOND Expo 2026的时代价值与深远意义,,"搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：以数实共生为钥,启全球创新新程:BEYOND Expo 2026的时代价值与深远意义现场图当前,全球新一轮科技革命与产业变革加速演进..."
+2026-05-31,微信,Fund At First Pitch,投资路演,参展商,1,,,金财链上大玩家,"*BEYOND Expo 2026*闭幕式澳門威尼斯人金光會場順利落幕,以FUND AT FIRST PITCH极限速投总决赛率先开启压轴环节",,搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：*BEYOND Expo 2026*闭幕式澳門威尼斯人金光會場順
+2026-05-31,微信,会后社交,投资路演,投资人,1,,,香港X科技创业平台,"他们在 Beyond Expo,面对 NBA 传奇球星做了一场特别的Pitch",,搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：亚洲规模最大的科技创新与生态博览会——BEYOND Expo 2026 5月30日在澳门圆满落下帷幕!为期4天的BEYOND Expo 2026 在澳门...
+2026-05-31,微信,国际科技论坛,国际合作,参展商,1,,,Shero Initiative旭柔计划,【S. IMPACT】2026 BEYOND Expo SheTech 女性科技峰会回顾,,"搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 以「AI:数实共生」为核心主题,汇聚全球120余个国家和地区、超3万名专业从业者,共探科技创新的未来机遇与发展..."
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,10,,淙淙,我与beyond的故事,https://www.rednote.com/explore/6a1ac4f100000000350261f2,小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：10；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,6,,苗苗bdl,澳门beyond expo 2026,https://www.rednote.com/explore/6a1b1175000000003601c418,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：6；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,Web3,KOL/创作者,1,35,,香菜老师,🇲🇴04年 Web3️⃣大厂实习生，展会应该看什么,https://www.rednote.com/explore/6a1ad19c0000000037034b3c,小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：35；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,,,小红薯664D8B53,beyond expo,https://www.rednote.com/explore/6a1a47440000000007012924,小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：赞；日期按页面显示“2天前”折算。
+2026-05-31,小红书,BEYOND Hack Day,AI,KOL/创作者,1,4,,悬溺,在黑客松现场当路人,https://www.rednote.com/explore/6a1abe99000000003700df2d,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：4；日期按页面显示“2天前”折算。
+2026-05-31,小红书,BEYOND Awards,智能硬件,参展商,1,1,,讯飞AI眼镜,讯飞AI眼镜获得BEYOND最佳创新大奖🏆,https://www.rednote.com/explore/6a19aa9f0000000007028171,小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：1；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,19,,粤海街道肖美丽,🇲🇴澳门偶遇张伟丽！！就在Beyond Expo,https://www.rednote.com/explore/6a1950860000000007028e4b,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：19；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,,,AXE,Beyond Expo 科技展,https://www.rednote.com/explore/6a1a8089000000000800065d,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：赞；日期按页面显示“2天前”折算。
+2026-05-31,小红书,会后社交,展商故事,官方/主办方,1,29,,BEYOND国际科技创新博览会,亚洲第一！BEYOND Expo 2026 圆满收官🎉,https://www.rednote.com/explore/6a1b14470000000007023581,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：29；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,AI,KOL/创作者,1,9,,Jennie,BeyondExpo2026👋,https://www.rednote.com/explore/6a1ad352000000003701face,小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：9；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,6,,lacey,BeyondExpo2026亚洲最大科创博览会,https://www.rednote.com/explore/6a1963ea00000000370355f5,小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：6；日期按页面显示“2天前”折算。
+2026-05-31,小红书,展区开放,展商故事,KOL/创作者,1,3,,茕茕乔依,BeyondExpo 2026 澳门初体验,https://www.rednote.com/explore/6a1b0f000000000007028ccb,小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：3；日期按页面显示“2天前”折算。
+2026-05-31,新闻/网站,BEYOND Hack Day,AI,参展商,1,,,上海证券报 / 新浪财经,行云科技联合主办“BEYOND HACK DAY” 加速探索AI生态价值,https://finance.sina.com.cn/roll/2026-05-31/doc-inhzuvrh6105956.shtml,新浪财经转载上海证券报公开报道，可核验；未公开互动量。
+2026-05-31,新闻/网站,国际科技论坛,国际合作,媒体,1,,,TechNode,KISED promotes South Korea's startup ecosystem and support programs at BEYOND Expo,https://technode.com/2026/05/31/kised-promotes-south-koreas-startup-ecosystem-and-support-programs-at-beyond-expo/,TechNode 公开报道，可核验；未公开阅读、分享或评论数据。
+2026-05-31,LinkedIn,开幕式,AI,媒体,1,,,TNGlobal,AI: digital to physical - the 6th BEYOND EXPO is set to open in Macau,https://www.linkedin.com/posts/technodeglobal_ai-digital-to-physical-the-6th-beyond-activity-7465313547749855232--40U,LinkedIn 公开帖子页采样；页面显示“2d”，按 2026-06-02 折算为 5月31日；公开页未显示可核验互动数。
+2026-05-31,LinkedIn,BGlobal新品发布,智能硬件,媒体,1,0,,EastFrontier,iFLYTEK unveiled 40g AI glasses at BEYOND Expo 2026 in Macao,https://www.linkedin.com/company/eastfrontier/posts/,LinkedIn 登录态站内搜索采样；关键词「iFLYTEK BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：0，另显示 1 条评论。
+2026-05-31,LinkedIn,BGlobal新品发布,智能硬件,KOL/创作者,1,2,,Nicky Chu,Checking out iFLYTEK AI Glasses at BEYOND Expo 2026 in Macao,https://www.linkedin.com/in/nicky-chu-6310b21a/,LinkedIn 登录态站内搜索采样；关键词「iFLYTEK BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：2。
+2026-05-31,LinkedIn,BGlobal Summit,国际合作,媒体,1,5,,杨映敏,TNGlobal brought ASEAN perspectives to BEYOND Expo BGlobal and Global Investment Summit,https://www.linkedin.com/in/yimie-yong-aa5ba631/zh/,LinkedIn 登录态站内搜索采样；关键词「BGlobal BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：5；该动态转发/引用 TNGlobal 对 BGlobal Summit 和 Global Investment Summit 的现场内容。

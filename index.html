@@ -15,7 +15,7 @@
       </div>
       <div class="data-status" id="dataStatus">
         <span class="status-dot"></span>
-        <span>当前为样例数据，可导入 CSV 替换</span>
+        <span>当前为公开可核验样本，不代表全网声量</span>
       </div>
     </header>
 
@@ -34,8 +34,8 @@
         <div class="field-group">
           <label for="metricSelect">颜色指标</label>
           <select id="metricSelect">
+            <option value="mentions">公开样本数</option>
             <option value="heat">综合热度分</option>
-            <option value="mentions">提及量</option>
             <option value="engagement">互动量</option>
             <option value="sentiment">情绪健康度</option>
           </select>
@@ -64,20 +64,38 @@
           <label class="button secondary" for="csvInput">导入 CSV</label>
           <input id="csvInput" class="visually-hidden" type="file" accept=".csv,text/csv" />
           <button class="button secondary" id="exportButton" type="button">导出当前数据</button>
-          <button class="button primary" id="resetButton" type="button">恢复样例</button>
+          <button class="button primary" id="resetButton" type="button">恢复公开样本</button>
         </div>
+      </section>
+
+      <section class="method-panel" aria-label="数据口径说明">
+        <article class="method-card warning">
+          <span class="method-label">数据状态</span>
+          <strong id="dataModeLabel">公开可核验样本</strong>
+          <p id="dataModeText">当前内置数据来自可打开的公开网页；它是部分捕获样本，不是全网社交平台声量。</p>
+        </article>
+        <article class="method-card">
+          <span class="method-label">指标口径</span>
+          <strong id="scoreExplain">可选指标</strong>
+          <p>默认按公开样本数上色；综合热度分只用已知字段折算，未公开互动量和未判定情绪不会被估算。</p>
+        </article>
+        <article class="method-card">
+          <span class="method-label">汇报口径</span>
+          <strong id="accuracyLabel">部分抓取</strong>
+          <p id="accuracyText">能抓取的公开样本会保留原文链接；抓不到的平台互动、阅读、评论和情绪会明确标注，不用 0 或估算值填充。</p>
+        </article>
       </section>
 
       <section class="kpi-grid" aria-label="核心指标">
         <article class="kpi">
-          <span class="kpi-label">总提及量</span>
+          <span class="kpi-label">公开样本数</span>
           <strong id="kpiMentions">0</strong>
           <small>筛选后记录汇总</small>
         </article>
         <article class="kpi">
-          <span class="kpi-label">总互动量</span>
+          <span class="kpi-label">已知互动量</span>
           <strong id="kpiEngagement">0</strong>
-          <small>点赞、评论、转发、播放等</small>
+          <small>未公开时不估算</small>
         </article>
         <article class="kpi">
           <span class="kpi-label">峰值日期</span>
@@ -114,14 +132,20 @@
               <p id="detailSubtitle">点击热力图单元格查看贡献内容。</p>
             </div>
           </div>
-          <div class="detail-score" id="detailScore">-</div>
+          <div class="detail-score-wrap">
+            <div class="detail-score" id="detailScore">-</div>
+            <div class="detail-score-copy">
+              <span id="detailScoreLabel">综合热度分 / 100</span>
+              <small id="detailScoreNote">点击色块后显示计算结果和贡献内容。</small>
+            </div>
+          </div>
           <dl class="detail-metrics">
             <div>
-              <dt>提及量</dt>
+              <dt>公开样本数</dt>
               <dd id="detailMentions">-</dd>
             </div>
             <div>
-              <dt>互动量</dt>
+              <dt>已知互动量</dt>
               <dd id="detailEngagement">-</dd>
             </div>
             <div>
@@ -139,7 +163,7 @@
         <div class="section-heading">
           <div>
             <h2 id="evidenceTitle">内容证据池</h2>
-            <p>用于解释热度来源。真实数据导入后，这里会变成可复盘的内容清单。</p>
+            <p>每条记录都优先保留原文链接；没有公开互动数据的条目会直接标明。</p>
           </div>
           <span class="record-count" id="recordCount">0 条记录</span>
         </div>
@@ -153,8 +177,8 @@
                 <th>话题</th>
                 <th>人群</th>
                 <th>标题/内容</th>
-                <th>案例</th>
-                <th>提及</th>
+                <th>案例/线索</th>
+                <th>样本数</th>
                 <th>互动</th>
               </tr>
             </thead>

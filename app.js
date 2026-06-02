@@ -10,24 +10,24 @@ const FIELD_LABELS = {
 const MODE_COPY = {
   platform: {
     title: "平台 x 日期",
-    subtitle: "看各平台在 5 月 27 日到 31 日的声量峰值和滞后发酵。",
+    subtitle: "看公开可核验样本在 5 月 27 日到 31 日的来源分布，不代表全网平台声量。",
   },
   agenda: {
     title: "议程 x 日期",
-    subtitle: "看开幕式、峰会、发布、Awards 等活动节点的传播表现。",
+    subtitle: "看开幕式、发布、展区、国际论坛等活动节点被公开网页捕获的情况。",
   },
   topic: {
     title: "话题 x 日期",
-    subtitle: "看 AI、出海、低空经济、创作者经济等主题在活动期间如何起落。",
+    subtitle: "看 AI、智能硬件、创作者经济、国际合作等主题在公开样本里的起落。",
   },
   persona: {
     title: "人群 x 日期",
-    subtitle: "看媒体、嘉宾、参展商、KOL、观众等传播主体的贡献。",
+    subtitle: "看官方、媒体、创作者等传播主体在公开样本里的贡献。",
   },
 };
 
 const ORDER = {
-  platform: ["微信", "视频号", "微博", "小红书", "抖音", "B站", "LinkedIn", "X", "YouTube", "新闻/网站"],
+  platform: ["官网/新闻稿", "新闻/网站", "微信", "小红书", "LinkedIn", "X", "抖音", "TikTok", "YouTube", "B站", "微博"],
   agenda: [
     "开幕式",
     "展区开放",
@@ -40,421 +40,2186 @@ const ORDER = {
     "国际科技论坛",
     "会后社交",
   ],
-  topic: ["AI", "出海", "智能硬件", "低空经济", "Web3", "医疗健康", "创作者经济", "投资路演", "国际合作", "展商故事"],
+  topic: ["AI", "机器人", "出海", "智能硬件", "低空经济", "Web3", "医疗健康", "创作者经济", "投资路演", "国际合作", "展商故事"],
   persona: ["官方/主办方", "媒体", "参展商", "嘉宾", "投资人", "KOL/创作者", "观众"],
 };
 
 const sampleRecords = [
   {
-    date: "2026-05-27",
-    platform: "微信",
-    agenda: "开幕式",
-    topic: "AI",
-    persona: "官方/主办方",
-    mentions: 72,
-    engagement: 6200,
-    sentiment: 88,
-    source: "官方公众号",
-    title: "BEYOND Expo 2026 开幕，大会主题聚焦 AI 与数实共生",
-    url: "",
-    notes: "样例数据：用于演示开幕日官方内容的集中传播。",
+    "date": "2026-05-27",
+    "platform": "官网/新闻稿",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND EXPO 官网",
+    "title": "iFLYTEK to Launch AI Glasses at BEYOND Expo 2026",
+    "url": "https://www.beyondexpo.com/2026/05/27/iflytek-to-launch-ai-glasses-at-beyond-expo-2026/",
+    "notes": "公开官网稿，可核验；未公开平台互动量和情绪口径。"
   },
   {
-    date: "2026-05-27",
-    platform: "视频号",
-    agenda: "开幕式",
-    topic: "AI",
-    persona: "媒体",
-    mentions: 64,
-    engagement: 15400,
-    sentiment: 84,
-    source: "视频号直播",
-    title: "开幕式直播片段带动大会主题讨论",
-    url: "",
-    notes: "样例数据：直播型内容互动权重较高。",
+    "date": "2026-05-27",
+    "platform": "官网/新闻稿",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND EXPO 官网",
+    "title": "BGlobal New Product Launch: 11 Top Tech Companies to Debut Next-Generation Innovations",
+    "url": "https://www.beyondexpo.com/2026/05/27/bglobal-new-product-launch-11-top-tech-companies-to-debut-next-generation-innovations-to-the-world-at-beyond-expo-2026/",
+    "notes": "公开官网稿，可核验；说明 BGlobal 新品发布阵容，未公开互动量。"
   },
   {
-    date: "2026-05-27",
-    platform: "LinkedIn",
-    agenda: "开幕式",
-    topic: "国际合作",
-    persona: "嘉宾",
-    mentions: 23,
-    engagement: 1800,
-    sentiment: 86,
-    source: "嘉宾动态",
-    title: "International guests share BEYOND Expo opening day",
-    url: "",
-    notes: "样例数据：国际嘉宾扩散。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "关于横琴",
+    "title": "横琴科技企业组团赴澳!亮相 BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 8 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：横琴近 40 家本土科技企业、科研机构,组团奔赴澳门,参加第六届 BEYOND 国际科技创新博览会(BEYOND Expo 2026).作为粤..."
   },
   {
-    date: "2026-05-27",
-    platform: "新闻/网站",
-    agenda: "开幕式",
-    topic: "国际合作",
-    persona: "媒体",
-    mentions: 31,
-    engagement: 2400,
-    sentiment: 82,
-    source: "行业媒体",
-    title: "澳门科技展会开幕，吸引多国企业与投资机构",
-    url: "",
-    notes: "样例数据：媒体稿件的基础覆盖。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "人形机器人孵化器",
+    "title": "邀请函| 2026澳门BEYOND EXPO2026 -上海市人形机器人创新孵化器专区",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
   },
   {
-    date: "2026-05-28",
-    platform: "微信",
-    agenda: "BGlobal Summit",
-    topic: "出海",
-    persona: "媒体",
-    mentions: 108,
-    engagement: 9700,
-    sentiment: 87,
-    source: "产业媒体",
-    title: "BGlobal Summit 聚焦企业出海、本地化与国际增长",
-    url: "",
-    notes: "样例数据：出海议题在中文平台更集中。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "邵志敏观察",
+    "title": "BEYOND EXPO前瞻:AI不止在屏幕里",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：今天是 BEYOND Expo 2026 开展前夕的媒体日活动,提前看到了一些创新科技产品.现场很有意思,很多产品就是一个个正在走向真..."
   },
   {
-    date: "2026-05-28",
-    platform: "微博",
-    agenda: "展区开放",
-    topic: "展商故事",
-    persona: "观众",
-    mentions: 126,
-    engagement: 18200,
-    sentiment: 81,
-    source: "观众帖子",
-    title: "展区首个完整开放日，机器人和智能硬件内容被集中转发",
-    url: "",
-    notes: "样例数据：现场观众内容容易形成即时声量。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "深圳模力营AI生态社区",
+    "title": "模力舞台 | 集结20+新锐企业力量,亮相澳门 BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026年5月27日至30日,亚洲最大的科技创新和生态博览会 BEYOND Expo 2026于澳门威尼斯人金光会展中心盛大启幕.本届大会以..."
   },
   {
-    date: "2026-05-28",
-    platform: "小红书",
-    agenda: "展区开放",
-    topic: "智能硬件",
-    persona: "KOL/创作者",
-    mentions: 94,
-    engagement: 22600,
-    sentiment: 89,
-    source: "探展笔记",
-    title: "BEYOND Expo 探展：AI 眼镜、机器人、生活方式科技",
-    url: "",
-    notes: "样例数据：探展型内容适合图片和短视频平台。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "Fund At First Pitch",
+    "topic": "投资路演",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "珠海先进集成电路研究院",
+    "title": "全攻略|数实共生风暴来袭!BEYOND Expo 2026终极通关指南,看这一篇就够了!",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026 的现场,共同见证这些极具社会责任感、即将颠覆人类未来生活方式的硬核创新力量!极限速投这绝不是一场普..."
   },
   {
-    date: "2026-05-28",
-    platform: "抖音",
-    agenda: "BGlobal新品发布",
-    topic: "智能硬件",
-    persona: "参展商",
-    mentions: 91,
-    engagement: 38400,
-    sentiment: 86,
-    source: "参展商短视频",
-    title: "新品发布现场剪辑带动智能硬件关注",
-    url: "",
-    notes: "样例数据：短视频互动量高，需单独看播放和转评赞。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "国际合作",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "聚焦AI从数字走向物理世界,BEYOND Expo 2026盛大开幕",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026开幕式在澳门巴黎人酒店·巴黎人剧场举行,正式拉开大会帷幕.本届博览会以“AI:数实共生“为主题,聚焦人..."
   },
   {
-    date: "2026-05-28",
-    platform: "视频号",
-    agenda: "BGlobal新品发布",
-    topic: "低空经济",
-    persona: "参展商",
-    mentions: 58,
-    engagement: 17600,
-    sentiment: 84,
-    source: "企业视频号",
-    title: "eVTOL 与低空出行产品在新品发布环节亮相",
-    url: "",
-    notes: "样例数据：低空经济内容有明确产品记忆点。",
+    "date": "2026-05-27",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "医疗健康",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Peek膝关节",
+    "title": "中科医材参展 BEYOND Expo 2026|链接全球创新生态,共探未来医疗科技",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026,于澳门威尼斯人金光会展 Hall A-C|SK-617 展台,与来自全球的科技企业、创业者、投资机构及产业伙伴共同参..."
   },
   {
-    date: "2026-05-28",
-    platform: "LinkedIn",
-    agenda: "国际科技论坛",
-    topic: "国际合作",
-    persona: "嘉宾",
-    mentions: 49,
-    engagement: 4200,
-    sentiment: 90,
-    source: "论坛嘉宾",
-    title: "Asia-Europe tech collaboration discussed at BEYOND Expo",
-    url: "",
-    notes: "样例数据：国际论坛在 LinkedIn 更容易沉淀专业关系。",
+    "date": "2026-05-27",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "澳門週報",
+    "title": "AI數實共生 鏈接全球創新！BEYOND Expo 2026在澳門盛大啟幕",
+    "url": "https://weeklymacao.com/detail/480",
+    "notes": "港澳本地媒体公开报道，可核验；页面显示阅读量但未纳入互动口径。"
   },
   {
-    date: "2026-05-28",
-    platform: "X",
-    agenda: "国际科技论坛",
-    topic: "Web3",
-    persona: "KOL/创作者",
-    mentions: 42,
-    engagement: 5100,
-    sentiment: 76,
-    source: "Web3 社群账号",
-    title: "Web2+3 Commerce Forum highlights stablecoin and cross-border payments",
-    url: "",
-    notes: "样例数据：Web3 内容容易出现讨论分化，需关注情绪。",
+    "date": "2026-05-27",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TechNode",
+    "title": "At BEYOND Expo 2026, XREAL CEO predicts an iPhone moment for AI glasses",
+    "url": "https://technode.com/2026/05/27/at-beyond-expo-2026-xreal-ceo-predicts-an-iphone-moment-for-ai-glasses/",
+    "notes": "TechNode 公开报道，可核验；未公开阅读、分享或评论数据。"
   },
   {
-    date: "2026-05-28",
-    platform: "YouTube",
-    agenda: "BGlobal新品发布",
-    topic: "智能硬件",
-    persona: "官方/主办方",
-    mentions: 28,
-    engagement: 6900,
-    sentiment: 85,
-    source: "官方直播回放",
-    title: "BGlobal Product Launch replay",
-    url: "",
-    notes: "样例数据：长视频适合做会后沉淀。",
+    "date": "2026-05-27",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TechNode",
+    "title": "From video understanding to edge deployment Om AI targets real-world AI",
+    "url": "https://technode.com/2026/05/27/from-video-understanding-to-edge-deployment-om-ai-targets-real-world-ai/",
+    "notes": "TechNode 公开报道，可核验；未公开阅读、分享或评论数据。"
   },
   {
-    date: "2026-05-28",
-    platform: "微信",
-    agenda: "Creator Summit",
-    topic: "创作者经济",
-    persona: "KOL/创作者",
-    mentions: 61,
-    engagement: 8300,
-    sentiment: 83,
-    source: "创作者公众号",
-    title: "Creator Summit 讨论内容生产与商业化路径",
-    url: "",
-    notes: "样例数据：创作者议题适合拉 KOL 二次传播。",
+    "date": "2026-05-27",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TNGlobal",
+    "title": "AI: digital to physical – the 6th BEYOND EXPO is set to open in Macau",
+    "url": "https://technode.global/2026/05/27/ai-digital-to-physical-the-6th-beyond-expo-is-set-to-open-in-macau/",
+    "notes": "TNGlobal 公开报道/媒体合作稿，可核验；未公开互动量。"
   },
   {
-    date: "2026-05-28",
-    platform: "新闻/网站",
-    agenda: "Fund At First Pitch",
-    topic: "投资路演",
-    persona: "投资人",
-    mentions: 37,
-    engagement: 2800,
-    sentiment: 79,
-    source: "创投媒体",
-    title: "60 至 180 秒快速路演让项目直接面对投资人",
-    url: "",
-    notes: "样例数据：创投内容声量不一定最大，但后续价值高。",
+    "date": "2026-05-27",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 29,
+    "sentiment": null,
+    "source": "Olivia奥莉杨",
+    "title": "谁在🌟澳门Beyond Expo AI科技展",
+    "url": "https://www.rednote.com/explore/6a15a4080000000037034abc",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：29；日期按页面显示“6天前”折算。"
   },
   {
-    date: "2026-05-29",
-    platform: "微信",
-    agenda: "BEYOND Hack Day",
-    topic: "AI",
-    persona: "参展商",
-    mentions: 76,
-    engagement: 7800,
-    sentiment: 88,
-    source: "开发者社群",
-    title: "Hack Day 项目路演与 AI 创新硬件赛道持续发酵",
-    url: "",
-    notes: "样例数据：开发者和创业团队内容偏长尾。",
+    "date": "2026-05-27",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 2179,
+    "sentiment": null,
+    "source": "超级Dunk",
+    "title": "拒绝看热闹！BEYOND Expo2026前沿速递",
+    "url": "https://www.rednote.com/explore/6a150274000000000702ef49",
+    "notes": "小红书网页版人工采集；补搜关键词「beyondexpo2026」；页面显示互动：2179；日期按页面显示“6天前”折算。"
   },
   {
-    date: "2026-05-29",
-    platform: "B站",
-    agenda: "展区开放",
-    topic: "智能硬件",
-    persona: "KOL/创作者",
-    mentions: 38,
-    engagement: 14800,
-    sentiment: 87,
-    source: "科技 UP 主",
-    title: "探展 Vlog：AI 硬件与机器人展台合集",
-    url: "",
-    notes: "样例数据：视频内容有更长生命周期。",
+    "date": "2026-05-27",
+    "platform": "LinkedIn",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 28,
+    "sentiment": null,
+    "source": "InnoX Shenzhen",
+    "title": "30 Shenzhen startups bring AI + hardware products to BEYOND Expo 2026",
+    "url": "https://www.linkedin.com/company/beyond-expo",
+    "notes": "LinkedIn 公开公司页采样；BEYOND Expo 转发 InnoX Shenzhen 更新，页面显示“6d”，按 2026-06-02 折算为 5月27日；公开 reactions：28；非原帖直链，按公司页更新核验。"
   },
   {
-    date: "2026-05-29",
-    platform: "小红书",
-    agenda: "会后社交",
-    topic: "展商故事",
-    persona: "观众",
-    mentions: 57,
-    engagement: 13200,
-    sentiment: 80,
-    source: "现场体验笔记",
-    title: "从展会到晚间活动，BEYOND Expo 社交体验记录",
-    url: "",
-    notes: "样例数据：生活方式平台关注现场体验。",
+    "date": "2026-05-27",
+    "platform": "LinkedIn",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 30,
+    "sentiment": null,
+    "source": "Nikoloz Turazashvili / Vexrail",
+    "title": "Vexrail public launch at BEYOND Expo 2026",
+    "url": "https://www.linkedin.com/company/beyond-expo",
+    "notes": "LinkedIn 公开公司页采样；BEYOND Expo 转发 Vexrail 创始人更新，页面显示“6d”，按 2026-06-02 折算为 5月27日；公开 reactions：30，另显示 12 comments；非原帖直链。"
   },
   {
-    date: "2026-05-29",
-    platform: "LinkedIn",
-    agenda: "Fund At First Pitch",
-    topic: "投资路演",
-    persona: "投资人",
-    mentions: 44,
-    engagement: 3900,
-    sentiment: 85,
-    source: "投资机构动态",
-    title: "Investors share notes from Fund At First Pitch",
-    url: "",
-    notes: "样例数据：投资人动态适合形成明年邀约名单。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "倍联德实业",
+    "title": "算力出海,亮相国际 | 倍联德受邀参展 BEYOND Expo 2026,携锐影工作站登陆澳门国际科技盛会",
+    "url": "",
+    "notes": "搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026 年 5 月 27 日 - 30 日,第六届 BEYOND 国际科技创新博览会(BEYOND Expo 2026)于澳门威尼斯人金光会展中心盛大启幕.."
   },
   {
-    date: "2026-05-29",
-    platform: "新闻/网站",
-    agenda: "国际科技论坛",
-    topic: "医疗健康",
-    persona: "媒体",
-    mentions: 34,
-    engagement: 2600,
-    sentiment: 81,
-    source: "医疗科技媒体",
-    title: "未来医疗与功能营养议题在论坛中展开",
-    url: "",
-    notes: "样例数据：垂直媒体对细分议题更有价值。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "看到科技",
+    "title": "AI赋能高效协作:看到科技多款会议产品亮相BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：日,亚洲极具影响力的年度科技盛会 —— BEYOND Expo 2026 于中国澳门盛大举行.本届博览会以 “AI:数实共生“ 为核心主题,..."
   },
   {
-    date: "2026-05-29",
-    platform: "X",
-    agenda: "BEYOND Hack Day",
-    topic: "AI",
-    persona: "KOL/创作者",
-    mentions: 29,
-    engagement: 3300,
-    sentiment: 82,
-    source: "开发者账号",
-    title: "Hack Day projects around embodied AI and hardware",
-    url: "",
-    notes: "样例数据：英语技术圈扩散。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "有新Newin",
+    "title": "BEYOND Expo 2026:AI 开始进入真实场景",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5 月 27 日,BEYOND Expo 2026 在澳门开幕.今年大会主题是“AI:数实共生“.相比 2025 年“赋能亚洲,连接世界“,今年的讨..."
   },
   {
-    date: "2026-05-30",
-    platform: "微信",
-    agenda: "BEYOND Awards",
-    topic: "展商故事",
-    persona: "官方/主办方",
-    mentions: 84,
-    engagement: 10400,
-    sentiment: 91,
-    source: "官方公众号",
-    title: "BEYOND Awards 获奖项目与企业回顾",
-    url: "",
-    notes: "样例数据：Awards 是会后内容资产。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "珠海高新区",
+    "title": "特首到访!珠海高新区硬核科技亮相2026 BEYOND EXPO",
+    "url": "",
+    "notes": "搜狗微信搜索第 8 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日,亚洲规模最大、影响力最广的国际科技创新盛会——BEYOND Expo 2026在澳门威尼斯人金光会展中心启幕.本届展会以“..."
   },
   {
-    date: "2026-05-30",
-    platform: "视频号",
-    agenda: "BEYOND Awards",
-    topic: "展商故事",
-    persona: "参展商",
-    mentions: 69,
-    engagement: 21400,
-    sentiment: 90,
-    source: "企业视频号",
-    title: "获奖企业发布现场视频与感谢内容",
-    url: "",
-    notes: "样例数据：参展商自传播可放大官方节点。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "AINGOODS硬集谷",
+    "title": "在BEYOND Expo,我们看到智能硬件未来的更多可能...",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：国际科技创新博览会(BEYOND Expo 2026)在中国澳门举办.笔者在第一时间来到了现场,给即将到场的朋友们做一次前瞻,也给未..."
   },
   {
-    date: "2026-05-30",
-    platform: "微博",
-    agenda: "会后社交",
-    topic: "创作者经济",
-    persona: "观众",
-    mentions: 48,
-    engagement: 7600,
-    sentiment: 78,
-    source: "观众帖子",
-    title: "活动收官日现场照片与观众反馈",
-    url: "",
-    notes: "样例数据：收官日可监测满意度和问题反馈。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "讯飞AI眼镜亮相BEYOND Expo 2026,拓展AI终端走向真实场景新路径",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026举办场地BEYOND Expo 2026 今年继续在澳门威尼斯人金光会展举办.作为澳门最大的综合度假村营运商,金沙中国有限公司旗..."
   },
   {
-    date: "2026-05-30",
-    platform: "LinkedIn",
-    agenda: "BEYOND Awards",
-    topic: "国际合作",
-    persona: "嘉宾",
-    mentions: 53,
-    engagement: 5600,
-    sentiment: 92,
-    source: "获奖企业与嘉宾",
-    title: "Award winners and partners post event wrap-up notes",
-    url: "",
-    notes: "样例数据：适合沉淀国际合作证据。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "CityU生活圈",
+    "title": "亚洲最大科技盛会!BEYOND Expo 2026全攻略,澳门学生免费入场",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日-30日,亚洲规模最大的科技盛会——BEYOND Expo 2026,正在澳门威尼斯人金光会展中心举行.近800家全球科技企业、..."
   },
   {
-    date: "2026-05-30",
-    platform: "YouTube",
-    agenda: "BEYOND Awards",
-    topic: "AI",
-    persona: "官方/主办方",
-    mentions: 21,
-    engagement: 5200,
-    sentiment: 86,
-    source: "官方视频",
-    title: "BEYOND Awards highlight reel",
-    url: "",
-    notes: "样例数据：会后视频回顾。",
+    "date": "2026-05-28",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "ShenzhenDaily",
+    "title": "Shenzhen takes center stage at Macao expo 深圳闪耀BEYOND Expo 2026:科技创新力量亮相澳门",
+    "url": "",
+    "notes": "搜狗微信搜索第 8 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：Shenzhen exhibition area during BEYOND Expo 2026 in Macao today. Shenzhen startu"
   },
   {
-    date: "2026-05-31",
-    platform: "微信",
-    agenda: "展区开放",
-    topic: "展商故事",
-    persona: "媒体",
-    mentions: 66,
-    engagement: 6200,
-    sentiment: 84,
-    source: "媒体复盘",
-    title: "BEYOND Expo 2026 展区与重点项目复盘",
-    url: "",
-    notes: "样例数据：展会结束后的媒体复盘。",
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 3,
+    "sentiment": null,
+    "source": "龚海瀚",
+    "title": "持续关注 BEYOND Expo 2026",
+    "url": "https://www.rednote.com/explore/6a16df6e000000000803ceed",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：3；日期按页面显示“5天前”折算。"
   },
   {
-    date: "2026-05-31",
-    platform: "小红书",
-    agenda: "展区开放",
-    topic: "智能硬件",
-    persona: "观众",
-    mentions: 39,
-    engagement: 8800,
-    sentiment: 83,
-    source: "观众笔记",
-    title: "周末整理：最值得记住的 BEYOND Expo 产品",
-    url: "",
-    notes: "样例数据：用户体验内容的长尾。",
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 13,
+    "sentiment": null,
+    "source": "雷科技",
+    "title": "这个科技博览会杀疯了！谁说澳门只有娱乐场",
+    "url": "https://www.rednote.com/explore/6a16b5060000000036030e81",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：13；日期按页面显示“5天前”折算。"
   },
   {
-    date: "2026-05-31",
-    platform: "LinkedIn",
-    agenda: "BGlobal Summit",
-    topic: "出海",
-    persona: "参展商",
-    mentions: 45,
-    engagement: 4300,
-    sentiment: 87,
-    source: "参展企业动态",
-    title: "Exhibitors summarize global market meetings after BEYOND Expo",
-    url: "",
-    notes: "样例数据：B2B 线索在会后继续出现。",
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 18,
+    "sentiment": null,
+    "source": "南山区老干部",
+    "title": "来澳门参展喽",
+    "url": "https://www.rednote.com/explore/6a17135800000000360328a3",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：18；日期按页面显示“5天前”折算。"
   },
   {
-    date: "2026-05-31",
-    platform: "新闻/网站",
-    agenda: "BEYOND Awards",
-    topic: "国际合作",
-    persona: "媒体",
-    mentions: 29,
-    engagement: 2200,
-    sentiment: 82,
-    source: "综合新闻",
-    title: "BEYOND Expo 收官，多项科技创新成果获得关注",
-    url: "",
-    notes: "样例数据：新闻端收束报道。",
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 3,
+    "sentiment": null,
+    "source": "清华怡姐说税",
+    "title": "有来澳门beyond expo的朋友吗",
+    "url": "https://www.rednote.com/explore/6a16ee4d000000003501ca64",
+    "notes": "小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：3；日期按页面显示“5天前”折算。"
   },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 11,
+    "sentiment": null,
+    "source": "山河野人记",
+    "title": "澳门初探 | 当我被吸入这欢乐场",
+    "url": "https://www.rednote.com/explore/6a1712d800000000350291bb",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：11；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 6,
+    "sentiment": null,
+    "source": "殷晓玥Victoria",
+    "title": "2026Beyond Expo开幕式",
+    "url": "https://www.rednote.com/explore/6a16a78f0000000006023ce4",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：6；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 1,
+    "sentiment": null,
+    "source": "Dana科技猎头Young Boss",
+    "title": "Beyond Expo2026 Opening Ceremony",
+    "url": "https://www.rednote.com/explore/6a1789fd000000003601b5df",
+    "notes": "小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：1；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 43,
+    "sentiment": null,
+    "source": "Wilo",
+    "title": "澳门见！Wilo诚邀共赴BEYOND Expo",
+    "url": "https://www.rednote.com/explore/6a15176f000000000803f670",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：43；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 32,
+    "sentiment": null,
+    "source": "Cyan Amoo",
+    "title": "Beyond Expo开展仅剩1天⏳ Amoo送门票了！",
+    "url": "https://www.rednote.com/explore/6a16a78d0000000006034cd5",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：32；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 16,
+    "sentiment": null,
+    "source": "ApexFlow",
+    "title": "有在澳门 BEYOND Expo 现场的朋友吗？",
+    "url": "https://www.rednote.com/explore/6a16a1ce00000000070299a2",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：16；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 15,
+    "sentiment": null,
+    "source": "暗壳AI",
+    "title": "BEYOND Expo 2026 现场见！",
+    "url": "https://www.rednote.com/explore/6a16bd8d00000000080314d5",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：15；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 11,
+    "sentiment": null,
+    "source": "Kenhsu01",
+    "title": "Beyond Expo 2026 首日全记录🔥",
+    "url": "https://www.rednote.com/explore/6a171e9d0000000006035704",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：11；日期按页面显示“5天前”折算。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "大湾区时报",
+    "title": "BEYOND Expo 2026國際科技創新博覽會在澳門盛大開幕",
+    "url": "https://www.baytvs.com/guoji/gsdt/20260528/6989.html",
+    "notes": "港澳/大湾区媒体公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "新浪财经",
+    "title": "让讯飞、XREAL、普渡畅谈AI硬件未来，澳门Beyond展会什么来头？",
+    "url": "https://finance.sina.cn/stock/jdts/2026-05-28/detail-inhzmtwq8609776.d.html",
+    "notes": "新浪财经公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "创作者经济",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TechNode",
+    "title": "Ziyouliangji aims to use AI music platform Hitto to turn everyone into a song creator",
+    "url": "https://technode.com/2026/05/28/ziyouliangji-aims-to-use-ai-music-platform-hitto-to-turn-everyone-into-a-song-creator/",
+    "notes": "TechNode 公开报道，可核验；未公开阅读、分享或评论数据。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TNGlobal",
+    "title": "iFLYTEK to launch AI glasses at BEYOND Expo 2026",
+    "url": "https://technode.global/2026/05/28/iflytek-to-launch-ai-glasses-at-beyond-expo-2026/",
+    "notes": "TNGlobal 公开转载/报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "LinkedIn",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": 18,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "Global Launches. 11 Products. One Afternoon.",
+    "url": "https://www.linkedin.com/company/beyond-expo",
+    "notes": "LinkedIn 公开公司页采样；页面显示“5d Edited”，按 2026-06-02 折算为 5月28日；公开 reactions：18；内容指向 BGlobal Product Launch 直播预告。"
+  },
+  {
+    "date": "2026-05-28",
+    "platform": "LinkedIn",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Vexrail",
+    "title": "Meet Vexrail Founder & CEO at BEYOND Expo 2026 Booth SK001",
+    "url": "https://sg.linkedin.com/company/vexrail",
+    "notes": "LinkedIn 公开公司页采样；Vexrail 页面显示“5d”，按 2026-06-02 折算为 5月28日；公开页未显示可核验互动数。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "官网/新闻稿",
+    "agenda": "国际科技论坛",
+    "topic": "Web3",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "PR Newswire / KuCoin",
+    "title": "KuCoin CMO at BEYOND Expo: Trust Is Becoming the New Infrastructure for Web3",
+    "url": "https://www.prnewswire.com/news-releases/kucoin-cmo-at-beyond-expo-trust-is-becoming-the-new-infrastructure-for-web3-302785553.html",
+    "notes": "参展/论坛企业新闻稿源站，可核验；未公开社交互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "官网/新闻稿",
+    "agenda": "BEYOND Awards",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "PR Newswire / Makera",
+    "title": "Makera Showcases Z1 at BEYOND Expo 2026, Wins Best of Innovation Award",
+    "url": "https://www.prnewswire.com/apac/news-releases/makera-showcases-z1-at-beyond-expo-2026-wins-best-of-innovation-award-for-making-precision-cnc-more-accessible-302784945.html",
+    "notes": "获奖企业新闻稿源站，可核验；未公开社交互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "艾菲尔香港科技",
+    "title": "Beyond Expo 2026 澳门",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026年5月27日至30日,亚洲规模最大的科技创新与生态博览会BEYOND Expo 2026将在中国澳门威尼斯人金光会展中心举办...."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "宸境科技",
+    "title": "让机器看懂世界:宸境科技携三大核心产品亮相 BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月28日,宸境科技正式亮相澳门BEYOND国际科技创新博览会(BEYOND Expo).作为亚洲最具影响力的科技盛会之一,BEYOND ..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "BEYOND Awards",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "出门问问AIGC",
+    "title": "出门问问TicNote Pods 4G AI录音耳机荣获 BEYOND Expo 2026 Best of Innovation Awards",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo是亚洲规模最大的国际科技博览会之一,本届汇聚... 2026荣获＂Best of Kickstarter＂之后,TicNote Pods"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "高維引力",
+    "title": "在澳門,看見AI從「數字」走向「物理」——BEYOND Expo 2026現場觀察",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日至30日,第六屆BEYOND Expo在澳門威尼斯人金光會展... 2026上拿到22萬個讚,被Yahoo、Engadget等40多家媒體報導...."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "BEYOND Awards",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "灵童机器人",
+    "title": "灵童机器人澳门首秀!斩获 BEYOND Expo 2026 创新大奖",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：灵童机器人首次登陆澳门BEYOND Expo 2026,灵童机器人便以全球最小60cm自主行走桌面人形机器人惊艳国际舞台,并从全球800余..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "龙岗企服",
+    "title": "BEYOND Expo 2026即将开幕,龙岗展团产品清单请查收",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026年5月27日-30日第六届BEYOND国际科技创新博览会将在澳门威尼斯人金光会展中心盛大举办本届展会以「AI:数实共生」为主..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "莫界科技",
+    "title": "莫界受邀出席 BEYOND Expo 2026,彰显光学硬实力",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：近日,全球顶尖科技创新盛会 BEYOND Expo 2026 在澳门威尼斯人金光会展中心盛大启幕,莫界凭借 AI+AR 光学领域的顶尖硬实力,..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "全球首家人工智能6S店",
+    "title": "人工智能6S店携自研智能体盒子LongMini 亮相BEYOND Expo 2026,解码AI硬件出海新范式",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月28日,第六届BEYOND国际科技创新博览会(BEYOND Expo 2026)的聚光灯下,由深圳市龙岗区人工智能(机器人)署主办、全..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "特科技时尚",
+    "title": "AI数实共生 迈向物理世界——BEYOND Expo 2026在澳门盛大开幕",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月27日下午,BEYOND Expo 2026国际科技创新博览会开幕式在澳门巴黎人酒店·巴黎人剧场隆重举行.本届博览会以“AI:数实共..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "亿邦产业",
+    "title": "BEYOND Expo 2026:机器人、智能眼镜、Agent 物理AI如何落地?",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：文丨吕哲彤如果说,过去两年的AI叙事更多围绕大模型、算力和应用入口展开,那么在BEYOND Expo 2026开幕式上,我们注意到,..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "珠西博士科技创新服务平台",
+    "title": "【活动报名】江门市高才会联合博士科技:诚邀参加2026 BEYOND EXPO国际科技创新博览会",
+    "url": "",
+    "notes": "搜狗微信搜索第 9 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND EXPO 2026简介中文版.pdf扫描下方海报二维码添加微信,备注 「姓名+单位」,欢迎各位积极报名,共赴澳门,见证科技未..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "国际科技论坛",
+    "topic": "国际合作",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "岑浩辉到BEYOND Expo 2026展区调研,支持本澳创新科技持续发展",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026通过展览展示、论坛讨论和商务洽谈,让前沿技术、产业应用和国际合作需求在澳门集中交流,也为粤港澳大湾区..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "机器人在线猜拳、AR测肤、低空飞行......来BEYOND Expo 2026提前过一把“未来生活“",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026展区在澳门威尼斯人金光会展持续开启.近800家国际参展企业围绕AI大模型与数字基础设施、具身智能与机器人..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Cynthia的奇妙冒险",
+    "title": "Beyond Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：今年这里像“家门口的CES“,但更务实——没有那么多＂未来已来＂的宏大叙事,满场都是＂这个到底怎么落地＂的真问题.和老朋..."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "DoNews",
+    "title": "BEYOND Expo 2026观察:AI、眼镜和机器人",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：撰文 | 程书书编辑 | 李信马题图 | BEYOND Expo 2026大会在BEYOND Expo 2026开幕式上,BEYOND Expo 联合创始人贺建"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "MEIKE 美刻",
+    "title": "Meike美刻亮相BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND EXPO 2026澳门,2026年5月27日 —— 第六届BEYOND国际科技创新博览会(BEYOND Expo 2026)在澳门威尼斯人金光.."
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 21,
+    "sentiment": null,
+    "source": "阿卡姆之花",
+    "title": "澳门特首岑浩辉先生BEYONDExpo首日观展",
+    "url": "https://www.rednote.com/explore/6a17fe310000000007020081",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：21；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "Web3",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 8,
+    "sentiment": null,
+    "source": "安哥的商业决策笔记",
+    "title": "BEYOND EXPO：发现Token在重估一切",
+    "url": "https://www.rednote.com/explore/6a1831e600000000380370ad",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：8；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 5,
+    "sentiment": null,
+    "source": "半导体AI具身机器人观察",
+    "title": "科大讯飞AI眼镜在澳门发布！",
+    "url": "https://www.rednote.com/explore/6a17f63c000000000702bb76",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：5；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 2,
+    "sentiment": null,
+    "source": "科技行者",
+    "title": "暴走BEYOND Expo 2026！🚶🏻‍♀️",
+    "url": "https://www.rednote.com/explore/6a183a7e0000000036032e76",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：2；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 118,
+    "sentiment": null,
+    "source": "王蒂姆",
+    "title": "BEYOND首日💻👓 刷新认知科技改变工作流",
+    "url": "https://www.rednote.com/explore/6a17ea3e0000000008003ad3",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：118；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 7,
+    "sentiment": null,
+    "source": "斜杠中女S姐",
+    "title": "参加亚洲最夯的展会是什么感受",
+    "url": "https://www.rednote.com/explore/6a18511a0000000038036653",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：7；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 2,
+    "sentiment": null,
+    "source": "昕桐｜首席具身官",
+    "title": "澳门的 BEYOND 2026 ，“亚洲版CES”?",
+    "url": "https://www.rednote.com/explore/6a17ce02000000000603291d",
+    "notes": "小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：2；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "知外Global AI Growth",
+    "title": "智能硬件的AI落地场｜Beyond Expo",
+    "url": "https://www.rednote.com/explore/6a182f0c0000000008026720",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：4；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "中年少女探索世界",
+    "title": "澳门BEYOND Expo到处都是机器人",
+    "url": "https://www.rednote.com/explore/6a17b799000000003803776c",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：4；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 39,
+    "sentiment": null,
+    "source": "Arc安格增长",
+    "title": "在澳门Beyond Expo的第1天，我们看到4️⃣件事",
+    "url": "https://www.rednote.com/explore/6a183ef10000000035022770",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：39；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 6,
+    "sentiment": null,
+    "source": "BoltzLog熵约智能",
+    "title": "🇲🇴BEYOND展会的朋友请举手🙋",
+    "url": "https://www.rednote.com/explore/6a1806b300000000060306aa",
+    "notes": "小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：6；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 26,
+    "sentiment": null,
+    "source": "Jennie",
+    "title": "同在澳门🇲🇴BEYONDExpo科技展会的朋友举手",
+    "url": "https://www.rednote.com/explore/6a16642b0000000038034a68",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：26；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "Johnlin的笔记",
+    "title": "科大讯飞发布AI眼镜售价4299元",
+    "url": "https://www.rednote.com/explore/6a1864a700000000380238c1",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：4；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "国际科技论坛",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 5,
+    "sentiment": null,
+    "source": "KL",
+    "title": "BEYOND EXPO国际科技创新峰会🥂",
+    "url": "https://www.rednote.com/explore/6a1857e60000000008027751",
+    "notes": "小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：5；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 9,
+    "sentiment": null,
+    "source": "V0 的Neo",
+    "title": "硬核科技展，被我玩出了度假感⛱️",
+    "url": "https://www.rednote.com/explore/6a18180d0000000006032b75",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：9；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 27,
+    "sentiment": null,
+    "source": "Weekender+",
+    "title": "澳门BEYOND Expo 展览，科技感拉满!",
+    "url": "https://www.rednote.com/explore/6a17d9400000000038021860",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：27；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 3,
+    "sentiment": null,
+    "source": "Upsello",
+    "title": "BEYOND Expo｜求展位坐标！串门模式开启",
+    "url": "https://www.rednote.com/explore/6a17e7c10000000036001eeb",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：3；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 15,
+    "sentiment": null,
+    "source": "机器人小白",
+    "title": "在Beyond Expo，这家机器人被澳门特首“点名”",
+    "url": "https://www.rednote.com/explore/6a181fc90000000008025928",
+    "notes": "小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：15；日期按页面显示“4天前”折算。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "华夏时报 / 新浪财经",
+    "title": "戴在鼻梁上的“AI助理”：科大讯飞40克眼镜入局，智能穿戴的“刚需时刻”还有多远？",
+    "url": "https://finance.sina.com.cn/stock/relnews/cn/2026-05-29/doc-inhzqpth7886421.shtml",
+    "notes": "新浪财经转载华夏时报公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "经济观察报 / 新浪财经",
+    "title": "BEYOND Expo 2026观察：AI硬件火爆，中东主权基金开始筛选中国公司",
+    "url": "https://finance.sina.com.cn/stock/t/2026-05-29/doc-inhzpspr9557180.shtml",
+    "notes": "新浪财经转载经济观察报公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "上观新闻 / 新浪财经",
+    "title": "40克机身+超级AI助理，讯飞AI眼镜发布！“百镜大战”迎“重磅玩家”",
+    "url": "https://finance.sina.com.cn/stock/t/2026-05-29/doc-inhzpfxv9623332.shtml",
+    "notes": "新浪财经转载上观新闻公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "新浪科技",
+    "title": "讯飞AI眼镜发布：整机仅重40克，售价4299元",
+    "url": "https://finance.sina.com.cn/tech/shenji/2026-05-29/doc-inhzpwvq7979618.shtml",
+    "notes": "新浪科技公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "展区开放",
+    "topic": "医疗健康",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "新浪数码",
+    "title": "英伟达、腾讯、阿里、华为、金茉亮相“亚洲CES”BEYOND国际科技创新博览会，共话科技创新",
+    "url": "https://finance.sina.com.cn/tech/elec/xpfb/2026-05-29/doc-inhzpwvs0887955.shtml",
+    "notes": "新浪数码公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "DoNews / 新浪财经",
+    "title": "BEYOND Expo 2026观察：AI、眼镜和机器人",
+    "url": "https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzqimi9426592.shtml",
+    "notes": "新浪科技转载 DoNews 公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "BEYOND Awards",
+    "topic": "投资路演",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "IT之家",
+    "title": "清智系企业亮相 BEYOND Expo 2026 并斩获多项大奖",
+    "url": "https://www.ithome.com/0/957/142.htm",
+    "notes": "IT之家公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TechNode",
+    "title": "iFlytek launches 40g AI glasses with GlassClaw AI agent and advanced noise recognition",
+    "url": "https://technode.com/2026/05/29/iflytek-launches-40g-ai-glasses-with-glassclaw-ai-agent-and-advanced-noise-recognition/",
+    "notes": "TechNode 公开报道，可核验；未公开阅读、分享或评论数据。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TechNode",
+    "title": "Lenovo Innovation Accelerator channels ecosystem power to bring Chinese hard-tech startups to the global stage",
+    "url": "https://technode.com/2026/05/29/lenovo-innovation-accelerator-channels-ecosystem-power-to-bring-chinese-hard-tech-startups-to-the-global-stage/",
+    "notes": "TechNode 公开报道，可核验；未公开阅读、分享或评论数据。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "新闻/网站",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Xinhua",
+    "title": "Economic Watch: Real-world AI applications shine at Macao's leading high-tech expo",
+    "url": "https://english.news.cn/20260529/73b5659a46f94dc6ba9fc4ba88f4eb3d/c.html",
+    "notes": "新华社英文公开报道，可核验；未公开页面互动量。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "LinkedIn",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "iFlytek Product Launch is live NOW",
+    "url": "https://www.linkedin.com/company/beyond-expo",
+    "notes": "LinkedIn 公开公司页采样；页面显示“4d”，按 2026-06-02 折算为 5月29日；公开 reactions：4；内容为 iFlytek Product Launch 直播提醒。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "LinkedIn",
+    "agenda": "国际科技论坛",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "GameBot",
+    "title": "GameBot to join Future of Play Forum at BEYOND Expo 2026 in Macao",
+    "url": "https://www.linkedin.com/company/gamebotai/posts/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「BEYOND Expo May 29」；页面显示“4 天”，按 2026-06-02 折算为 5月29日；公开 reactions：4，另显示 1 次转发。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "LinkedIn",
+    "agenda": "国际科技论坛",
+    "topic": "出海",
+    "persona": "投资人",
+    "mentions": 1,
+    "engagement": 20,
+    "sentiment": null,
+    "source": "Headline - Asia",
+    "title": "Akio T. joins BEYOND Expo panels on Asian founders and hard tech investment",
+    "url": "https://www.linkedin.com/company/headline-asia/posts/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「BEYOND Expo May 29」；页面显示“4 天”，按 2026-06-02 折算为 5月29日；公开 reactions：20，另显示 1 次转发。"
+  },
+  {
+    "date": "2026-05-29",
+    "platform": "LinkedIn",
+    "agenda": "BGlobal Summit",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 1,
+    "sentiment": null,
+    "source": "TNGlobal",
+    "title": "TNGlobal recap includes BEYOND Expo BGlobal and product launch items",
+    "url": "https://www.linkedin.com/company/technodeglobal/posts/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「BGlobal BEYOND Expo」；页面显示“4 天”，按 2026-06-02 折算为 5月29日；公开 reactions：1；该动态为 TNGlobal 周报，包含 BEYOND Expo 开幕和 BGlobal 新品发布两条链接。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "官网/新闻稿",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "PR Newswire / BEYOND Expo",
+    "title": "聚焦AI从数字走向物理世界，BEYOND Expo 2026盛大开幕",
+    "url": "https://www.prnasia.com/story/535123-1.shtml",
+    "notes": "BEYOND Expo 中文新闻稿源站，可核验；未公开社交互动量。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "嘉宾",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "德勤Deloitte",
+    "title": "德勤特邀嘉宾参观团走进BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：德勤中国组织“德勤中国特邀嘉宾参观团“参与BEYOND国际科技创新博览会(BEYOND Expo 2026).本次共组建数个嘉宾团组,..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "具身智能机器人世界",
+    "title": "腾讯具身智能技术矩阵亮相BEYOND Expo 2026 不造机器人,做机器人的“钛螺丝“",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：具身智能产业化提速之际,5月28日,腾讯Robotics X实验室与福田实验室携多项重磅技术现身澳门BEYOND Expo 2026展览,机器人..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "筷子科技Kuaizi",
+    "title": "BEYOND Expo 2026 圆满收官:筷子科技以“视频商业智能体系统“赋能Physical",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：5月30日,为期四天的第六届 BEYOND 国际科技创新博览会(BEYOND Expo 2026)在澳门威尼斯人金光会展中心圆满落下帷幕.智..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "国际科技论坛",
+    "topic": "国际合作",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "陆易斯",
+    "title": "从澳门beyond expo 2026归来,相比去年,感觉今年太多的国内公司参展了,三天实际上还有一些看不过来,不少分论坛很精彩要听回放",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：从澳门beyond expo 2026归来,相比去年,感觉今年太多的国内公司参展了,三天实际上还有一些看不过来,不少分论坛很精彩要听回..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "太希智能科技",
+    "title": "太希智能闪耀BEYOND EXPO 2026!",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：寄予厚望BEYOND EXPO 202601澳门特别行政区行政长官岑浩辉、澳门特别行政区第五任行政长官贺一诚先后到访太希智能展台.(..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "小周晓谈",
+    "title": "BEYOND EXPO 2026[强]",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND EXPO 2026[强]"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "芸姐AI实训基地-收徒",
+    "title": "参加BEYOND Expo 2026 澳门国际科创博览会,满眼硬核黑科技;",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：参加BEYOND Expo 2026 澳门国际科创博览会,满眼硬核黑科技;人形机器人、智能移动平台、协作机械臂、AI生态齐亮相;从全球..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "国际合作",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "亚洲第一!BEYOND Expo 2026 圆满收官",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026媒体日也在大会首日汇聚200余家全球媒体、KOL、YouTuber及内容创作者,总粉丝量高达2600万,海外媒体占比..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "从澳门到深圳:BEYOND Expo 2026精彩延续,南山创新闪耀双城",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：(BEYOND Expo 2026)在澳门隆重举行.本届大会以 “AI:数实共生“为主题,持续收获全球科技圈的高度关注,四天展期内,共..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "全攻略|数实共生风暴来袭!BEYOND Expo 2026终极通关指南,看这一篇就够了!",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 2026 开幕式即将盛大开启!作为 BEYOND Expo 全年最具代表性的核心环节,本届开幕式将于5月27日 15:30至17:30."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "ZPilot",
+    "title": "BEYOND Expo 2026 完美闭幕:在全球科技现场,看见中国消费科技的新表达",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：2026 年 5 月 30 日,为期四天的 BEYOND Expo 2026 在澳门威尼斯人金光会展中心圆满落幕.作为亚洲规模最大、影响力最广的国际..."
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "21世纪经济报道",
+    "title": "AI眼镜也能接入“龙虾”了",
+    "url": "https://www.rednote.com/explore/6a19032d0000000036030e18",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：4；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 8,
+    "sentiment": null,
+    "source": "500熊",
+    "title": "想拍一个澳门BEYOND科技展机器人特辑",
+    "url": "https://www.rednote.com/explore/6a1930d0000000000803caed",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：8；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "龚海瀚",
+    "title": "在澳门和讯飞 AI 眼镜重逢",
+    "url": "https://www.rednote.com/explore/6a19290e0000000007026802",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：赞；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 484,
+    "sentiment": null,
+    "source": "果子bibibi",
+    "title": "97年市场总监工作日记🇲🇴澳门Beyond Expo",
+    "url": "https://www.rednote.com/explore/6a195a160000000008000535",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：484；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "江瀚视野",
+    "title": "讯飞AI眼镜正式发布，讯飞眼镜的优势何在？",
+    "url": "https://www.rednote.com/explore/6a195ca20000000007022f43",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：赞；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "科技行者",
+    "title": "AI眼镜的风，终究是吹到了科大讯飞",
+    "url": "https://www.rednote.com/explore/6a19877d0000000038035457",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：赞；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "会后社交",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 426,
+    "sentiment": null,
+    "source": "懒懒小卡比",
+    "title": "BEYOND高能回顾｜在澳门看到未来",
+    "url": "https://www.rednote.com/explore/6a194a37000000000702048f",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：426；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 7,
+    "sentiment": null,
+    "source": "唐月明",
+    "title": "BEYOND 2026越来越好，明天下午1：45 AI音乐",
+    "url": "https://www.rednote.com/explore/6a19aab60000000008027618",
+    "notes": "小红书网页版人工采集；关键词「数实共生 BEYOND」；页面显示互动：7；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 3,
+    "sentiment": null,
+    "source": "兔儿小爷",
+    "title": "AI+科技多模态｜澳门Beyond Expo展",
+    "url": "https://www.rednote.com/explore/6a195cc10000000035021fd6",
+    "notes": "小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：3；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 28,
+    "sentiment": null,
+    "source": "馅儿",
+    "title": "2026澳门beyond expo观察（02）",
+    "url": "https://www.rednote.com/explore/6a18f3ec0000000035024209",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：28；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": 6,
+    "sentiment": null,
+    "source": "BEYOND国际科技创新博览会",
+    "title": "讯飞AI眼镜新品发布｜AI终端真的走进现实了",
+    "url": "https://www.rednote.com/explore/6a1977c60000000036000935",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：6；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": 45,
+    "sentiment": null,
+    "source": "BEYOND国际科技创新博览会",
+    "title": "BEYOND Expo 2026 盛大开幕",
+    "url": "https://www.rednote.com/explore/6a191b89000000000702ca0a",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：45；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 5,
+    "sentiment": null,
+    "source": "Cynthia Yang在Realtime AI",
+    "title": "Beyond Expo 2026｜AI：digital to physical",
+    "url": "https://www.rednote.com/explore/6a19638f000000000800002f",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：5；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "Léo",
+    "title": "去澳门BeyondExpo长见识了",
+    "url": "https://www.rednote.com/explore/6a19831f0000000006023757",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：4；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 14,
+    "sentiment": null,
+    "source": "Lexiccc",
+    "title": "这个机器人有点好抱",
+    "url": "https://www.rednote.com/explore/6a1925320000000035032cf8",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 澳门」；页面显示互动：14；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "BEYOND Hack Day",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 9,
+    "sentiment": null,
+    "source": "Parker很爱玩",
+    "title": "Macao Hackathon🎉",
+    "url": "https://www.rednote.com/explore/6a1924d30000000035032b23",
+    "notes": "小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：9；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 7,
+    "sentiment": null,
+    "source": "奶油米",
+    "title": "Beyond expo🇲🇴",
+    "url": "https://www.rednote.com/explore/6a19de14000000003803543c",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：7；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 1,
+    "sentiment": null,
+    "source": "A陈小申",
+    "title": "参加亚洲最牛的展会是什么感受",
+    "url": "https://www.rednote.com/explore/6a192a110000000006020a9b",
+    "notes": "小红书网页版人工采集；补搜关键词「beyond expo」；页面显示互动：1；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 1,
+    "sentiment": null,
+    "source": "痛痛痛洒湖~",
+    "title": "这咖啡机器人帅爆🎉",
+    "url": "https://www.rednote.com/explore/6a190164000000001002d000",
+    "notes": "小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：1；日期按页面显示“3天前”折算。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "新闻/网站",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "财联社 / 新浪财经",
+    "title": "AI走向物理世界的“临门一脚”还差什么？｜直击BEYOND Expo 2026",
+    "url": "https://finance.sina.com.cn/stock/t/2026-05-30/doc-inhzswye6930112.shtml",
+    "notes": "新浪财经转载财联社公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "创作者经济",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "新浪财经",
+    "title": "BEYOND Expo 2026现场：联汇科技Om AI首发的OttoBox视频创作助理，把视频粗剪从8小时拉进30分钟",
+    "url": "https://finance.sina.com.cn/stock/t/2026-05-30/doc-inhzrzus0292319.shtml",
+    "notes": "新浪财经公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "机器人",
+    "persona": "嘉宾",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "AGV网 / 新浪财经",
+    "title": "普渡机器人创始人张涛出席BEYOND Expo开幕式，共话“数实共生”下的Physical AI路径",
+    "url": "https://finance.sina.com.cn/roll/2026-05-30/doc-inhzrreu7455900.shtml",
+    "notes": "新浪财经转载 AGV 网公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "新闻/网站",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "People's Daily Online / Xinhua",
+    "title": "Real-world AI applications shine at Macao's leading high-tech expo",
+    "url": "https://en.people.cn/n3/2026/0530/c90000-20462208.html",
+    "notes": "人民网英文转载新华社公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Yanko Design",
+    "title": "Translation, Prompting, Agentic AI, all in 40 grams: iFLYTEK's Smart Glasses Debut at BEYOND Expo 2026",
+    "url": "https://www.yankodesign.com/2026/05/30/translation-prompting-agentic-ai-all-in-40-grams-iflyteks-smart-glasses-debut-at-beyond-expo-2026/",
+    "notes": "Yanko Design 公开报道，可核验；未公开页面互动量。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "LinkedIn",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 8,
+    "sentiment": null,
+    "source": "TNGlobal",
+    "title": "Astribot at BEYOND Expo 2026: robotics and physical AI from Macau",
+    "url": "https://www.linkedin.com/company/beyond-expo",
+    "notes": "LinkedIn 公开公司页采样；BEYOND Expo 转发 TNGlobal 更新，页面显示“3d Edited”，按 2026-06-02 折算为 5月30日；公开 reactions：8；非原帖直链。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "LinkedIn",
+    "agenda": "会后社交",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 5,
+    "sentiment": null,
+    "source": "BEAMSTART",
+    "title": "BEYOND Expo drew 1,200+ global companies and 400+ speakers to Macao",
+    "url": "https://www.linkedin.com/posts/beamstart_beyond-expo-one-of-asias-largest-technology-activity-7465967535407071233-hq7r",
+    "notes": "LinkedIn 公开帖子页采样；页面显示“3d”，按 2026-06-02 折算为 5月30日；公开 reactions：5，另显示 3 comments。"
+  },
+  {
+    "date": "2026-05-30",
+    "platform": "LinkedIn",
+    "agenda": "国际科技论坛",
+    "topic": "Web3",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 2,
+    "sentiment": null,
+    "source": "HK Business Wire",
+    "title": "KuCoin CMO at BEYOND Expo: Trust Is Becoming the New Infrastructure for Web3",
+    "url": "http://hkbusinesswire.com/kucoin-cmo-at-beyond-expo-trust-is-becoming-the-new-infrastructure-for-web3/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「BEYOND Expo May 29」；页面显示“3 天”，按 2026-06-02 折算为 5月30日；公开 reactions：2；原帖分享外部新闻稿链接。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "官网/新闻稿",
+    "agenda": "会后社交",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "PR Newswire / BEYOND Expo",
+    "title": "AI: Digital to Physical | BEYOND Expo 2026 Leads Transformative Global Direction of Tech",
+    "url": "https://www.prnewswire.com/apac/news-releases/ai-digital-to-physical--beyond-expo-2026-leads-transformative-global-direction-of-tech-302786386.html",
+    "notes": "BEYOND Expo 会后英文新闻稿，可核验；未公开社交互动量。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "对外贸易促进中心",
+    "title": "BEYOND Expo 2026的时代价值与深远意义",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：以数实共生为钥,启全球创新新程:BEYOND Expo 2026的时代价值与深远意义现场图当前,全球新一轮科技革命与产业变革加速演进..."
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "微信",
+    "agenda": "Fund At First Pitch",
+    "topic": "投资路演",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "金财链上大玩家",
+    "title": "*BEYOND Expo 2026*闭幕式澳門威尼斯人金光會場順利落幕,以FUND AT FIRST PITCH极限速投总决赛率先开启压轴环节",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：*BEYOND Expo 2026*闭幕式澳門威尼斯人金光會場順"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "投资路演",
+    "persona": "投资人",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "香港X科技创业平台",
+    "title": "他们在 Beyond Expo,面对 NBA 传奇球星做了一场特别的Pitch",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：亚洲规模最大的科技创新与生态博览会——BEYOND Expo 2026 5月30日在澳门圆满落下帷幕!为期4天的BEYOND Expo 2026 在澳门..."
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "微信",
+    "agenda": "国际科技论坛",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Shero Initiative旭柔计划",
+    "title": "【S. IMPACT】2026 BEYOND Expo SheTech 女性科技峰会回顾",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；原文直链未稳定解析，点击“搜索线索”按标题回搜。摘要：BEYOND Expo 以「AI:数实共生」为核心主题,汇聚全球120余个国家和地区、超3万名专业从业者,共探科技创新的未来机遇与发展..."
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 10,
+    "sentiment": null,
+    "source": "淙淙",
+    "title": "我与beyond的故事",
+    "url": "https://www.rednote.com/explore/6a1ac4f100000000350261f2",
+    "notes": "小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：10；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 6,
+    "sentiment": null,
+    "source": "苗苗bdl",
+    "title": "澳门beyond expo 2026",
+    "url": "https://www.rednote.com/explore/6a1b1175000000003601c418",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：6；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "Web3",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 35,
+    "sentiment": null,
+    "source": "香菜老师",
+    "title": "🇲🇴04年 Web3️⃣大厂实习生，展会应该看什么",
+    "url": "https://www.rednote.com/explore/6a1ad19c0000000037034b3c",
+    "notes": "小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：35；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "小红薯664D8B53",
+    "title": "beyond expo",
+    "url": "https://www.rednote.com/explore/6a1a47440000000007012924",
+    "notes": "小红书网页版人工采集；关键词「BEYOND 探展」；页面显示互动：赞；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "BEYOND Hack Day",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 4,
+    "sentiment": null,
+    "source": "悬溺",
+    "title": "在黑客松现场当路人",
+    "url": "https://www.rednote.com/explore/6a1abe99000000003700df2d",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：4；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "BEYOND Awards",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": 1,
+    "sentiment": null,
+    "source": "讯飞AI眼镜",
+    "title": "讯飞AI眼镜获得BEYOND最佳创新大奖🏆",
+    "url": "https://www.rednote.com/explore/6a19aa9f0000000007028171",
+    "notes": "小红书网页版人工采集；关键词「科大讯飞 AI眼镜 BEYOND」；页面显示互动：1；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 19,
+    "sentiment": null,
+    "source": "粤海街道肖美丽",
+    "title": "🇲🇴澳门偶遇张伟丽！！就在Beyond Expo",
+    "url": "https://www.rednote.com/explore/6a1950860000000007028e4b",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：19；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "AXE",
+    "title": "Beyond Expo 科技展",
+    "url": "https://www.rednote.com/explore/6a1a8089000000000800065d",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：赞；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "会后社交",
+    "topic": "展商故事",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": 29,
+    "sentiment": null,
+    "source": "BEYOND国际科技创新博览会",
+    "title": "亚洲第一！BEYOND Expo 2026 圆满收官🎉",
+    "url": "https://www.rednote.com/explore/6a1b14470000000007023581",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：29；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 9,
+    "sentiment": null,
+    "source": "Jennie",
+    "title": "BeyondExpo2026👋",
+    "url": "https://www.rednote.com/explore/6a1ad352000000003701face",
+    "notes": "小红书网页版人工采集；关键词「BEYOND Expo 2026」；页面显示互动：9；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 6,
+    "sentiment": null,
+    "source": "lacey",
+    "title": "BeyondExpo2026亚洲最大科创博览会",
+    "url": "https://www.rednote.com/explore/6a1963ea00000000370355f5",
+    "notes": "小红书网页版人工采集；关键词「BEYOND国际科技创新博览会」；页面显示互动：6；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "小红书",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 3,
+    "sentiment": null,
+    "source": "茕茕乔依",
+    "title": "BeyondExpo 2026 澳门初体验",
+    "url": "https://www.rednote.com/explore/6a1b0f000000000007028ccb",
+    "notes": "小红书网页版人工采集；补搜关键词「BEYONDExpo」；页面显示互动：3；日期按页面显示“2天前”折算。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "新闻/网站",
+    "agenda": "BEYOND Hack Day",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "上海证券报 / 新浪财经",
+    "title": "行云科技联合主办“BEYOND HACK DAY” 加速探索AI生态价值",
+    "url": "https://finance.sina.com.cn/roll/2026-05-31/doc-inhzuvrh6105956.shtml",
+    "notes": "新浪财经转载上海证券报公开报道，可核验；未公开互动量。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "新闻/网站",
+    "agenda": "国际科技论坛",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TechNode",
+    "title": "KISED promotes South Korea's startup ecosystem and support programs at BEYOND Expo",
+    "url": "https://technode.com/2026/05/31/kised-promotes-south-koreas-startup-ecosystem-and-support-programs-at-beyond-expo/",
+    "notes": "TechNode 公开报道，可核验；未公开阅读、分享或评论数据。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "LinkedIn",
+    "agenda": "开幕式",
+    "topic": "AI",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "TNGlobal",
+    "title": "AI: digital to physical - the 6th BEYOND EXPO is set to open in Macau",
+    "url": "https://www.linkedin.com/posts/technodeglobal_ai-digital-to-physical-the-6th-beyond-activity-7465313547749855232--40U",
+    "notes": "LinkedIn 公开帖子页采样；页面显示“2d”，按 2026-06-02 折算为 5月31日；公开页未显示可核验互动数。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "LinkedIn",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 0,
+    "sentiment": null,
+    "source": "EastFrontier",
+    "title": "iFLYTEK unveiled 40g AI glasses at BEYOND Expo 2026 in Macao",
+    "url": "https://www.linkedin.com/company/eastfrontier/posts/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「iFLYTEK BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：0，另显示 1 条评论。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "LinkedIn",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": 2,
+    "sentiment": null,
+    "source": "Nicky Chu",
+    "title": "Checking out iFLYTEK AI Glasses at BEYOND Expo 2026 in Macao",
+    "url": "https://www.linkedin.com/in/nicky-chu-6310b21a/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「iFLYTEK BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：2。"
+  },
+  {
+    "date": "2026-05-31",
+    "platform": "LinkedIn",
+    "agenda": "BGlobal Summit",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": 5,
+    "sentiment": null,
+    "source": "杨映敏",
+    "title": "TNGlobal brought ASEAN perspectives to BEYOND Expo BGlobal and Global Investment Summit",
+    "url": "https://www.linkedin.com/in/yimie-yong-aa5ba631/zh/",
+    "notes": "LinkedIn 登录态站内搜索采样；关键词「BGlobal BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：5；该动态转发/引用 TNGlobal 对 BGlobal Summit 和 Global Investment Summit 的现场内容。"
+  }
 ];
 
 let records = cloneRecords(sampleRecords);
 let selectedCell = null;
+let dataMode = "captured";
 
 const els = {
   modeSelect: document.getElementById("modeSelect"),
@@ -466,6 +2231,11 @@ const els = {
   exportButton: document.getElementById("exportButton"),
   resetButton: document.getElementById("resetButton"),
   dataStatus: document.getElementById("dataStatus"),
+  dataModeLabel: document.getElementById("dataModeLabel"),
+  dataModeText: document.getElementById("dataModeText"),
+  scoreExplain: document.getElementById("scoreExplain"),
+  accuracyLabel: document.getElementById("accuracyLabel"),
+  accuracyText: document.getElementById("accuracyText"),
   heatmapTitle: document.getElementById("heatmapTitle"),
   heatmapSubtitle: document.getElementById("heatmapSubtitle"),
   heatmap: document.getElementById("heatmap"),
@@ -478,6 +2248,8 @@ const els = {
   detailTitle: document.getElementById("detailTitle"),
   detailSubtitle: document.getElementById("detailSubtitle"),
   detailScore: document.getElementById("detailScore"),
+  detailScoreLabel: document.getElementById("detailScoreLabel"),
+  detailScoreNote: document.getElementById("detailScoreNote"),
   detailMentions: document.getElementById("detailMentions"),
   detailEngagement: document.getElementById("detailEngagement"),
   detailSentiment: document.getElementById("detailSentiment"),
@@ -510,9 +2282,10 @@ function attachEvents() {
 
   els.resetButton.addEventListener("click", () => {
     records = cloneRecords(sampleRecords);
+    dataMode = "captured";
     selectedCell = null;
     populateFilters();
-    setStatus("当前为样例数据，可导入 CSV 替换", "sample");
+    setStatus("当前为公开可核验样本，不代表全网声量", "sample");
     render();
   });
 
@@ -534,9 +2307,10 @@ function attachEvents() {
     }
 
     records = inRange;
+    dataMode = "imported";
     selectedCell = null;
     populateFilters();
-    setStatus(`已导入 ${inRange.length} 条 CSV 记录`, "live");
+    setStatus(`已导入 ${inRange.length} 条 CSV 记录，请确认来源口径`, "live");
     render();
     event.target.value = "";
   });
@@ -544,10 +2318,37 @@ function attachEvents() {
 
 function render() {
   const filtered = getFilteredRecords();
+  renderDataNotes(filtered);
   renderKpis(filtered);
   renderHeatmap(filtered);
   renderDetail(filtered);
   renderEvidence(filtered);
+}
+
+function renderDataNotes(filtered) {
+  const exactLinks = records.filter((record) => record.url).length;
+  const linkRate = records.length ? Math.round((exactLinks / records.length) * 100) : 0;
+  const knownEngagement = records.filter((record) => hasNumber(record.engagement)).length;
+  const knownSentiment = records.filter((record) => hasNumber(record.sentiment)).length;
+  const modeCopy = dataMode === "captured"
+    ? {
+        label: "公开可核验样本",
+        text: "当前内置数据来自可打开的官网、媒体、微信、小红书等公开网页；这是部分捕获样本，不是微博、小红书、抖音等平台后台的全网声量。",
+        accuracy: "部分抓取",
+      }
+    : {
+        label: "已导入 CSV",
+        text: "当前结果来自你导入的 CSV。请确认数据是否来自平台后台、监测工具或人工核验表。",
+        accuracy: "可复核数据",
+      };
+
+  els.dataModeLabel.textContent = modeCopy.label;
+  els.dataModeText.textContent = modeCopy.text;
+  els.scoreExplain.textContent = "可选指标";
+  els.accuracyLabel.textContent = modeCopy.accuracy;
+  els.accuracyText.textContent = dataMode === "captured"
+    ? `当前筛选显示 ${filtered.length} 条公开样本；全量链接完整度 ${linkRate}%。互动数已知 ${knownEngagement}/${records.length} 条，情绪已判定 ${knownSentiment}/${records.length} 条，其余不估算。`
+    : `当前筛选显示 ${filtered.length} 条记录，原始链接完整度 ${linkRate}%。链接越完整，越容易回溯案例。`;
 }
 
 function populateFilters() {
@@ -592,17 +2393,20 @@ function getFilteredRecords() {
 function renderKpis(filtered) {
   const totalMentions = sum(filtered, "mentions");
   const totalEngagement = sum(filtered, "engagement");
+  const knownEngagement = filtered.filter((record) => hasNumber(record.engagement)).length;
   const byDate = groupBy(filtered, "date");
   const byPlatform = groupBy(filtered, "platform");
   const peakDate = topEntry(byDate, (items) => sum(items, "mentions") + sum(items, "engagement") / 120);
   const topPlatform = topEntry(byPlatform, (items) => sum(items, "mentions") + sum(items, "engagement") / 120);
 
   els.kpiMentions.textContent = formatNumber(totalMentions);
-  els.kpiEngagement.textContent = formatNumber(totalEngagement);
+  els.kpiEngagement.textContent = knownEngagement ? formatNumber(totalEngagement) : "未公开";
   els.kpiPeakDate.textContent = peakDate ? formatDate(peakDate.key) : "-";
-  els.kpiPeakDateMeta.textContent = peakDate ? `${formatNumber(sum(peakDate.items, "mentions"))} 次提及` : "暂无数据";
+  els.kpiPeakDateMeta.textContent = peakDate ? `${formatNumber(sum(peakDate.items, "mentions"))} 条公开样本` : "暂无数据";
   els.kpiTopPlatform.textContent = topPlatform ? topPlatform.key : "-";
-  els.kpiTopPlatformMeta.textContent = topPlatform ? `${formatNumber(sum(topPlatform.items, "engagement"))} 次互动` : "暂无数据";
+  els.kpiTopPlatformMeta.textContent = topPlatform
+    ? `${formatNumber(sum(topPlatform.items, "mentions"))} 条公开样本`
+    : "暂无数据";
 }
 
 function renderHeatmap(filtered) {
@@ -615,7 +2419,7 @@ function renderHeatmap(filtered) {
       return makeCell(row, date, items);
     })
   );
-  const maxMetric = Math.max(1, ...matrix.map((cell) => metricValue(cell, metric)));
+  const maxMetric = Math.max(1, ...matrix.map((cell) => metricNumber(cell, metric)));
 
   els.heatmapTitle.textContent = MODE_COPY[mode].title;
   els.heatmapSubtitle.textContent = MODE_COPY[mode].subtitle;
@@ -637,7 +2441,8 @@ function renderHeatmap(filtered) {
     DATE_RANGE.forEach((date) => {
       const cell = matrix.find((item) => item.row === row && item.date === date);
       const rawValue = metricValue(cell, metric);
-      const intensity = metric === "heat" ? cell.heat : Math.round((rawValue / maxMetric) * 100);
+      const numericValue = metricNumber(cell, metric);
+      const intensity = metric === "heat" ? cell.heat : Math.round((numericValue / maxMetric) * 100);
       const button = document.createElement("button");
       button.type = "button";
       button.className = "heat-cell";
@@ -654,8 +2459,8 @@ function renderHeatmap(filtered) {
       }
       button.innerHTML = `
         <strong>${formatMetric(rawValue, metric)}</strong>
-        <span>${cell.items.length ? `${cell.items.length} 条记录` : "暂无记录"}</span>
-        <small>${formatNumber(cell.engagement)} 互动</small>
+        <span>${metric === "heat" ? "综合热度分 /100" : metricLabel(metric)}</span>
+        <small>${formatNumber(cell.mentions)} 样本 · ${formatOptionalNumber(cell.engagement)} 互动</small>
       `;
       button.addEventListener("click", () => {
         selectedCell = { row, date };
@@ -670,7 +2475,7 @@ function renderHeatmap(filtered) {
 
 function makeCell(row, date, items) {
   const mentions = sum(items, "mentions");
-  const engagement = sum(items, "engagement");
+  const engagement = items.some((item) => hasNumber(item.engagement)) ? sum(items, "engagement") : null;
   const sentiment = average(items.map((item) => item.sentiment));
   return {
     row,
@@ -696,9 +2501,13 @@ function renderDetail(filtered) {
   els.detailSubtitle.textContent = `${FIELD_LABELS[mode]}维度下的贡献内容`;
   els.detailScore.textContent = cell.items.length ? cell.heat : "0";
   els.detailScore.style.background = heatColor(cell.heat);
+  els.detailScoreLabel.textContent = "综合热度分 / 100";
+  els.detailScoreNote.textContent = dataMode === "captured"
+    ? "仅基于已抓取的公开样本和已知互动量；未知项不估算。"
+    : "由样本数、互动量、情绪健康度折算，用于横向比较。";
   els.detailMentions.textContent = formatNumber(cell.mentions);
-  els.detailEngagement.textContent = formatNumber(cell.engagement);
-  els.detailSentiment.textContent = cell.items.length ? `${Math.round(cell.sentiment)}%` : "-";
+  els.detailEngagement.textContent = formatOptionalNumber(cell.engagement);
+  els.detailSentiment.textContent = formatSentiment(cell.sentiment);
   els.detailList.innerHTML = "";
 
   if (!items.length) {
@@ -717,6 +2526,8 @@ function resetDetail() {
   els.detailSubtitle.textContent = "点击热力图单元格查看贡献内容。";
   els.detailScore.textContent = "-";
   els.detailScore.style.background = "var(--accent)";
+  els.detailScoreLabel.textContent = "综合热度分 / 100";
+  els.detailScoreNote.textContent = "点击色块后显示计算结果和贡献内容。";
   els.detailMentions.textContent = "-";
   els.detailEngagement.textContent = "-";
   els.detailSentiment.textContent = "-";
@@ -767,7 +2578,7 @@ function renderEvidence(filtered) {
     row.appendChild(titleCell);
     row.appendChild(makeCaseCell(record));
     row.appendChild(makeTd(formatNumber(record.mentions), "number-cell"));
-    row.appendChild(makeTd(formatNumber(record.engagement), "number-cell"));
+    row.appendChild(makeTd(formatOptionalNumber(record.engagement), "number-cell"));
     els.evidenceBody.appendChild(row);
   });
 }
@@ -795,7 +2606,7 @@ function makeEvidenceItem(record) {
   }
 
   const metrics = document.createElement("p");
-  metrics.textContent = `${record.source || "未知来源"} · ${formatNumber(record.mentions)} 次提及 · ${formatNumber(record.engagement)} 次互动 · 情绪 ${record.sentiment}%`;
+  metrics.textContent = `${record.source || "未知来源"} · ${formatNumber(record.mentions)} 条公开样本 · ${formatOptionalNumber(record.engagement)} 互动 · 情绪 ${formatSentiment(record.sentiment)}`;
 
   const notes = document.createElement("p");
   notes.textContent = record.notes || "暂无备注。";
@@ -830,7 +2641,7 @@ function makeCaseLink(record) {
   link.textContent = hasExactUrl ? "打开案例" : "搜索线索";
   link.title = hasExactUrl
     ? "打开这条内容的原始链接"
-    : "样例数据没有原始链接，将按标题和平台搜索线索";
+    : "当前记录没有原始链接，将按标题和平台搜索线索";
   return link;
 }
 
@@ -849,6 +2660,7 @@ function buildSearchUrl(record) {
   if (record.platform === "微博") return `https://s.weibo.com/weibo?q=${encoded}`;
   if (record.platform === "小红书") return `https://www.xiaohongshu.com/search_result?keyword=${encoded}`;
   if (record.platform === "抖音") return `https://www.douyin.com/search/${encoded}`;
+  if (record.platform === "TikTok") return `https://www.tiktok.com/search?q=${encoded}`;
   if (record.platform === "LinkedIn") return `https://www.linkedin.com/search/results/content/?keywords=${encoded}`;
   if (record.platform === "X") return `https://x.com/search?q=${encoded}&src=typed_query&f=live`;
   if (record.platform === "YouTube") return `https://www.youtube.com/results?search_query=${encoded}`;
@@ -858,15 +2670,18 @@ function buildSearchUrl(record) {
 }
 
 function normalizeRecord(row) {
+  const mentions = parseNumber(row.mentions);
+  const engagement = parseNumber(row.engagement);
+  const sentiment = parseNumber(row.sentiment);
   const record = {
     date: clean(row.date),
     platform: clean(row.platform),
     agenda: clean(row.agenda),
     topic: clean(row.topic),
     persona: clean(row.persona),
-    mentions: parseNumber(row.mentions),
-    engagement: parseNumber(row.engagement),
-    sentiment: clamp(parseNumber(row.sentiment || 80), 0, 100),
+    mentions: mentions ?? 0,
+    engagement,
+    sentiment: sentiment === null ? null : clamp(sentiment, 0, 100),
     source: clean(row.source),
     title: clean(row.title),
     url: clean(row.url),
@@ -946,8 +2761,8 @@ function setStatus(message, state) {
 function heatScore({ mentions, engagement, sentiment }) {
   if (!mentions && !engagement) return 0;
   const mentionScore = Math.min(42, Math.sqrt(mentions) * 4.2);
-  const engagementScore = Math.min(48, Math.log10(engagement + 1) * 11.5);
-  const sentimentScore = Math.max(0, Math.min(10, sentiment / 10));
+  const engagementScore = hasNumber(engagement) ? Math.min(48, Math.log10(engagement + 1) * 11.5) : 0;
+  const sentimentScore = hasNumber(sentiment) ? Math.max(0, Math.min(10, sentiment / 10)) : 0;
   return Math.round(Math.min(100, mentionScore + engagementScore + sentimentScore));
 }
 
@@ -958,19 +2773,25 @@ function recordScore(record) {
 function metricValue(cell, metric) {
   if (metric === "mentions") return cell.mentions;
   if (metric === "engagement") return cell.engagement;
-  if (metric === "sentiment") return Math.round(cell.sentiment || 0);
+  if (metric === "sentiment") return hasNumber(cell.sentiment) ? Math.round(cell.sentiment) : null;
   return cell.heat;
 }
 
+function metricNumber(cell, metric) {
+  const value = metricValue(cell, metric);
+  return hasNumber(value) ? Number(value) : 0;
+}
+
 function metricLabel(metric) {
-  if (metric === "mentions") return "提及量";
+  if (metric === "mentions") return "公开样本数";
   if (metric === "engagement") return "互动量";
   if (metric === "sentiment") return "情绪健康度";
   return "综合热度分";
 }
 
 function formatMetric(value, metric) {
-  if (metric === "sentiment") return value ? `${value}%` : "0%";
+  if (metric === "sentiment") return formatSentiment(value);
+  if (metric === "engagement") return formatOptionalNumber(value);
   return formatNumber(value);
 }
 
@@ -1008,9 +2829,17 @@ function formatDate(date) {
 }
 
 function formatNumber(value) {
-  const number = Number(value) || 0;
+  const number = hasNumber(value) ? Number(value) : 0;
   if (number >= 10000) return `${(number / 10000).toFixed(number >= 100000 ? 0 : 1)}万`;
   return new Intl.NumberFormat("zh-CN").format(Math.round(number));
+}
+
+function formatOptionalNumber(value) {
+  return hasNumber(value) ? formatNumber(value) : "未公开";
+}
+
+function formatSentiment(value) {
+  return hasNumber(value) ? `${Math.round(value)}%` : "未判定";
 }
 
 function sortByOrder(values, order = []) {
@@ -1044,19 +2873,20 @@ function unique(values) {
 }
 
 function sum(items, field) {
-  return items.reduce((total, item) => total + (Number(item[field]) || 0), 0);
+  return items.reduce((total, item) => total + (hasNumber(item[field]) ? Number(item[field]) : 0), 0);
 }
 
 function average(values) {
-  const valid = values.filter((value) => Number.isFinite(Number(value)));
-  if (!valid.length) return 0;
+  const valid = values.filter((value) => hasNumber(value));
+  if (!valid.length) return null;
   return valid.reduce((total, value) => total + Number(value), 0) / valid.length;
 }
 
 function parseNumber(value) {
-  const normalized = String(value || "").replace(/,/g, "").trim();
+  const normalized = String(value ?? "").replace(/,/g, "").trim();
+  if (!normalized || ["未公开", "未抓取", "unknown", "null", "-"].includes(normalized.toLowerCase())) return null;
   const number = Number(normalized);
-  return Number.isFinite(number) ? number : 0;
+  return Number.isFinite(number) ? number : null;
 }
 
 function clean(value) {
@@ -1065,6 +2895,10 @@ function clean(value) {
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, Number(value) || 0));
+}
+
+function hasNumber(value) {
+  return value !== null && value !== "" && Number.isFinite(Number(value));
 }
 
 function cloneRecords(data) {
@@ -1100,7 +2934,7 @@ function makeEmpty(text) {
 }
 
 function csvEscape(value) {
-  const text = String(value || "");
+  const text = value === null || value === undefined ? "" : String(value);
   if (/[",\n\r]/.test(text)) return `"${text.replace(/"/g, '""')}"`;
   return text;
 }
