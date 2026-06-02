@@ -21,6 +21,7 @@
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
@@ -67,7 +68,7 @@ p {
 
 h1 {
   margin-bottom: 7px;
-  font-size: clamp(26px, 4vw, 40px);
+  font-size: 38px;
   letter-spacing: 0;
   line-height: 1.1;
 }
@@ -146,6 +147,7 @@ input[type="search"] {
   border-radius: 6px;
   color: var(--ink);
   background: #fbfcfd;
+  font-size: 16px;
 }
 
 select {
@@ -331,6 +333,8 @@ input[type="search"] {
 .heatmap {
   overflow-x: auto;
   padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .heatmap-grid {
@@ -581,6 +585,7 @@ input[type="search"] {
 
 .evidence-table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .evidence-table {
@@ -622,6 +627,64 @@ input[type="search"] {
   font-weight: 800;
 }
 
+.evidence-card-grid {
+  display: none;
+}
+
+.evidence-card {
+  display: grid;
+  gap: 9px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfcfd;
+}
+
+.evidence-card h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.evidence-card a {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.card-meta-line,
+.card-notes {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.card-metrics div {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.card-metrics dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.card-metrics dd {
+  margin: 3px 0 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
 @media (max-width: 1100px) {
   .toolbar {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
@@ -653,11 +716,25 @@ input[type="search"] {
 
   .app-shell {
     padding: 14px 12px 28px;
+    gap: 14px;
   }
 
   .toolbar,
   .kpi-grid {
     grid-template-columns: 1fr;
+  }
+
+  .toolbar,
+  .heatmap-panel,
+  .detail-panel,
+  .evidence-section {
+    padding: 14px;
+  }
+
+  .method-card,
+  .kpi {
+    min-height: 0;
+    padding: 14px;
   }
 
   .button-row {
@@ -671,6 +748,53 @@ input[type="search"] {
   .section-heading {
     align-items: stretch;
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .legend {
+    grid-template-columns: auto minmax(90px, 1fr) auto;
+    width: 100%;
+  }
+
+  .legend-bar {
+    width: 100%;
+  }
+
+  .heatmap-grid {
+    grid-template-columns: minmax(112px, 132px) repeat(5, minmax(98px, 112px));
+    min-width: 640px;
+    gap: 6px;
+  }
+
+  .axis-cell,
+  .row-label,
+  .column-label,
+  .heat-cell {
+    min-height: 62px;
+  }
+
+  .axis-cell,
+  .column-label {
+    min-height: 38px;
+    font-size: 12px;
+  }
+
+  .row-label {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .heat-cell {
+    padding: 8px;
+  }
+
+  .heat-cell strong {
+    font-size: 20px;
+  }
+
+  .heat-cell span,
+  .heat-cell small {
+    font-size: 12px;
   }
 
   .detail-metrics {
@@ -678,6 +802,63 @@ input[type="search"] {
   }
 
   .detail-score-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-score {
+    min-width: 88px;
+    min-height: 88px;
+    width: 88px;
+    font-size: 30px;
+  }
+
+  .evidence-table-wrap {
+    display: none;
+  }
+
+  .evidence-card-grid {
+    display: grid;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-header {
+    padding: 20px 14px 16px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .date-range,
+  .data-status {
+    font-size: 14px;
+  }
+
+  .button-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .method-card strong {
+    font-size: 18px;
+  }
+
+  .kpi strong {
+    font-size: 28px;
+  }
+
+  .detail-score-wrap {
+    gap: 10px;
+  }
+
+  .card-metrics {
     grid-template-columns: 1fr;
   }
 }

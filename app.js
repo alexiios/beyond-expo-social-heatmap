@@ -2256,6 +2256,7 @@ const els = {
   detailList: document.getElementById("detailList"),
   recordCount: document.getElementById("recordCount"),
   evidenceBody: document.getElementById("evidenceBody"),
+  evidenceCards: document.getElementById("evidenceCards"),
 };
 
 init();
@@ -2543,6 +2544,7 @@ function renderEvidence(filtered) {
 
   els.recordCount.textContent = `${sorted.length} 条记录`;
   els.evidenceBody.innerHTML = "";
+  els.evidenceCards.innerHTML = "";
 
   if (!sorted.length) {
     const row = document.createElement("tr");
@@ -2551,6 +2553,7 @@ function renderEvidence(filtered) {
     cell.appendChild(makeEmpty("当前筛选下没有内容记录。"));
     row.appendChild(cell);
     els.evidenceBody.appendChild(row);
+    els.evidenceCards.appendChild(makeEmpty("当前筛选下没有内容记录。"));
     return;
   }
 
@@ -2580,7 +2583,67 @@ function renderEvidence(filtered) {
     row.appendChild(makeTd(formatNumber(record.mentions), "number-cell"));
     row.appendChild(makeTd(formatOptionalNumber(record.engagement), "number-cell"));
     els.evidenceBody.appendChild(row);
+    els.evidenceCards.appendChild(makeEvidenceCard(record));
   });
+}
+
+function makeEvidenceCard(record) {
+  const card = document.createElement("article");
+  card.className = "evidence-card";
+
+  const meta = document.createElement("div");
+  meta.className = "item-meta";
+  meta.appendChild(makeChip(formatDate(record.date)));
+  meta.appendChild(makeChip(record.platform));
+  meta.appendChild(makeChip(record.topic, "alt"));
+
+  const title = document.createElement("h3");
+  if (record.url) {
+    const link = document.createElement("a");
+    link.href = record.url;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.textContent = record.title || record.source || "未命名内容";
+    title.appendChild(link);
+  } else {
+    title.textContent = record.title || record.source || "未命名内容";
+  }
+
+  const metaLine = document.createElement("p");
+  metaLine.className = "card-meta-line";
+  metaLine.textContent = `${record.agenda} · ${record.persona} · ${record.source || "未知来源"}`;
+
+  const metrics = document.createElement("dl");
+  metrics.className = "card-metrics";
+  metrics.appendChild(makeMetricPair("样本", formatNumber(record.mentions)));
+  metrics.appendChild(makeMetricPair("互动", formatOptionalNumber(record.engagement)));
+
+  const notes = document.createElement("p");
+  notes.className = "card-notes";
+  notes.textContent = record.notes || "暂无备注。";
+
+  const actionRow = document.createElement("div");
+  actionRow.className = "case-actions";
+  actionRow.appendChild(makeCaseLink(record));
+
+  card.appendChild(meta);
+  card.appendChild(title);
+  card.appendChild(metaLine);
+  card.appendChild(metrics);
+  card.appendChild(notes);
+  card.appendChild(actionRow);
+  return card;
+}
+
+function makeMetricPair(label, value) {
+  const wrapper = document.createElement("div");
+  const term = document.createElement("dt");
+  const detail = document.createElement("dd");
+  term.textContent = label;
+  detail.textContent = value;
+  wrapper.appendChild(term);
+  wrapper.appendChild(detail);
+  return wrapper;
 }
 
 function makeEvidenceItem(record) {
