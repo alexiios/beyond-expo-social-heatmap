@@ -2245,6 +2245,8 @@ const els = {
   kpiPeakDateMeta: document.getElementById("kpiPeakDateMeta"),
   kpiTopPlatform: document.getElementById("kpiTopPlatform"),
   kpiTopPlatformMeta: document.getElementById("kpiTopPlatformMeta"),
+  insightLede: document.getElementById("insightLede"),
+  insightGrid: document.getElementById("insightGrid"),
   detailTitle: document.getElementById("detailTitle"),
   detailSubtitle: document.getElementById("detailSubtitle"),
   detailScore: document.getElementById("detailScore"),
@@ -2321,6 +2323,7 @@ function render() {
   const filtered = getFilteredRecords();
   renderDataNotes(filtered);
   renderKpis(filtered);
+  renderInsights(filtered);
   renderHeatmap(filtered);
   renderDetail(filtered);
   renderEvidence(filtered);
@@ -2408,6 +2411,93 @@ function renderKpis(filtered) {
   els.kpiTopPlatformMeta.textContent = topPlatform
     ? `${formatNumber(sum(topPlatform.items, "mentions"))} 条公开样本`
     : "暂无数据";
+}
+
+function renderInsights(filtered) {
+  const insights = buildInsights(filtered);
+  els.insightLede.textContent = insights.lede;
+  els.insightGrid.innerHTML = "";
+  insights.cards.forEach((card) => els.insightGrid.appendChild(makeInsightCard(card)));
+}
+
+function buildInsights(filtered) {
+  const totalMentions = sum(filtered, "mentions");
+  if (!filtered.length || !totalMentions) {
+    return {
+      lede: "当前筛选下没有可判断的公开样本。可以放宽平台、话题或搜索条件后再看趋势。",
+      cards: [
+        {
+          label: "趋势",
+          title: "暂无趋势判断",
+          body: "没有样本时不生成峰值、集中度和扩散判断。",
+          meta: "未使用估算数据",
+        },
+      ],
+    };
+  }
+
+  const dateStats = DATE_RANGE.map((date) => {
+    const items = filtered.filter((record) => record.date === date);
+    return {
+      date,
+      mentions: sum(items, "mentions"),
+      engagement: sum(items, "engagement"),
+      items,
+    };
+  });
+  const peakDate = [...dateStats].sort((a, b) => b.mentions - a.mentions || b.engagement - a.engagement)[0];
+  const activeDays = dateStats.filter((item) => item.mentions > 0).length;
+  const platformRanks = rankGroups(filtered, "platform");
+  const topicRanks = rankGroups(filtered, "topic");
+  const agendaRanks = rankGroups(filtered, "agenda");
+  const topPlatform = platformRanks[0];
+  const topTopic = topicRanks[0];
+  const trend = describeTrend(dateStats);
+  const platformTop3Share = share(platformRanks.slice(0, 3).reduce((total, item) => total + item.mentions, 0), totalMentions);
+  const topicTop3Share = share(topicRanks.slice(0, 3).reduce((total, item) => total + item.mentions, 0), totalMentions);
+  const knownEngagementRecords = filtered.filter((record) => hasNumber(record.engagement));
+  const totalEngagement = sum(filtered, "engagement");
+  const topEngagement = [...knownEngagementRecords].sort((a, b) => Number(b.engagement) - Number(a.engagement))[0];
+  const topEngagementShare = topEngagement && totalEngagement
+    ? share(Number(topEngagement.engagement), totalEngagement)
+    : 0;
+
+  return {
+    lede: `公开样本显示，当前传播高点出现在${formatDate(peakDate.date)}；样本主要集中在${topPlatform.key}平台，并围绕${topTopic.key}、${topicRanks[1]?.key || "次级话题"}等方向展开。`,
+    cards: [
+      {
+        label: "时间趋势",
+        title: trend.title,
+        body: `${formatDate(peakDate.date)}为样本峰值，记录 ${formatNumber(peakDate.mentions)} 条；5天节奏为 ${formatDateCounts(dateStats)}。`,
+        meta: `活跃 ${activeDays}/5 天，按公开样本数判断`,
+      },
+      {
+        label: "平台集中",
+        title: concentrationTitle(topPlatform.share, "平台"),
+        body: `${topPlatform.key}贡献 ${formatNumber(topPlatform.mentions)} 条，占 ${formatShare(topPlatform.share)}；前三平台合计 ${formatShare(platformTop3Share)}。`,
+        meta: formatRankList(platformRanks.slice(0, 3)),
+      },
+      {
+        label: "话题集中",
+        title: topicConcentrationTitle(topTopic.share, topicTop3Share),
+        body: makeTopicBody(topicRanks, topicTop3Share),
+        meta: formatRankList(topicRanks.slice(0, 3)),
+      },
+      {
+        label: "汇报判断",
+        title: engagementJudgement(knownEngagementRecords, topEngagementShare),
+        body: makeJudgementBody({
+          filtered,
+          agendaRanks,
+          knownEngagementRecords,
+          topEngagement,
+          topEngagementShare,
+          totalEngagement,
+        }),
+        meta: `互动已知 ${knownEngagementRecords.length}/${filtered.length} 条，未知项不估算`,
+      },
+    ],
+  };
 }
 
 function renderHeatmap(filtered) {
@@ -2644,6 +2734,30 @@ function makeMetricPair(label, value) {
   wrapper.appendChild(term);
   wrapper.appendChild(detail);
   return wrapper;
+}
+
+function makeInsightCard(card) {
+  const article = document.createElement("article");
+  article.className = "insight-card";
+
+  const label = document.createElement("span");
+  label.className = "insight-label";
+  label.textContent = card.label;
+
+  const title = document.createElement("strong");
+  title.textContent = card.title;
+
+  const body = document.createElement("p");
+  body.textContent = card.body;
+
+  const meta = document.createElement("small");
+  meta.textContent = card.meta;
+
+  article.appendChild(label);
+  article.appendChild(title);
+  article.appendChild(body);
+  article.appendChild(meta);
+  return article;
 }
 
 function makeEvidenceItem(record) {
@@ -2929,6 +3043,107 @@ function topEntry(grouped, scoreFn) {
   return Object.entries(grouped)
     .map(([key, items]) => ({ key, items, score: scoreFn(items) }))
     .sort((a, b) => b.score - a.score)[0];
+}
+
+function rankGroups(items, field) {
+  const totalMentions = Math.max(1, sum(items, "mentions"));
+  return Object.entries(groupBy(items, field))
+    .map(([key, groupedItems]) => {
+      const mentions = sum(groupedItems, "mentions");
+      return {
+        key,
+        items: groupedItems,
+        mentions,
+        engagement: sum(groupedItems, "engagement"),
+        share: mentions / totalMentions,
+      };
+    })
+    .sort((a, b) => b.mentions - a.mentions || b.engagement - a.engagement || a.key.localeCompare(b.key, "zh-CN"));
+}
+
+function describeTrend(dateStats) {
+  const activeStats = dateStats.filter((item) => item.mentions > 0);
+  if (!activeStats.length) return { title: "暂无趋势判断" };
+
+  const peakIndex = dateStats.findIndex((item) => item.date === [...dateStats].sort((a, b) => b.mentions - a.mentions)[0].date);
+  const first = dateStats[0]?.mentions || 0;
+  const last = dateStats[dateStats.length - 1]?.mentions || 0;
+  const averageMentions = sum(dateStats, "mentions") / dateStats.length;
+
+  if (peakIndex <= 1 && dateStats[peakIndex].mentions >= averageMentions * 1.2) {
+    return { title: "前段集中释放" };
+  }
+  if (peakIndex === 2 && dateStats[peakIndex].mentions >= averageMentions * 1.2) {
+    return { title: "中段形成峰值" };
+  }
+  if (peakIndex >= 3 && last >= first) {
+    return { title: "后段继续扩散" };
+  }
+  if (last > 0 && last < first * 0.75) {
+    return { title: "后段热度回落" };
+  }
+  return { title: "多日相对平稳" };
+}
+
+function concentrationTitle(value, label) {
+  if (value >= 0.5) return `${label}高度集中`;
+  if (value >= 0.35) return `${label}明显集中`;
+  if (value >= 0.22) return `${label}有主导项`;
+  return `${label}分布较分散`;
+}
+
+function topicConcentrationTitle(topShare, top3Share) {
+  if (topShare >= 0.35) return "话题明显集中";
+  if (top3Share >= 0.55) return "话题呈多主轴";
+  if (topShare >= 0.22) return "话题有主导项";
+  return "话题分布较分散";
+}
+
+function makeTopicBody(topicRanks, top3Share) {
+  const topTopic = topicRanks[0];
+  const tiedTopics = topicRanks.filter((item) => item.mentions === topTopic.mentions);
+  if (tiedTopics.length > 1) {
+    return `${tiedTopics.map((item) => item.key).join("、")}并列最高，均为 ${formatNumber(topTopic.mentions)} 条；前三话题合计 ${formatShare(top3Share)}。`;
+  }
+  return `${topTopic.key}为当前最高，记录 ${formatNumber(topTopic.mentions)} 条；前三话题合计 ${formatShare(top3Share)}。`;
+}
+
+function engagementJudgement(recordsWithEngagement, topShare) {
+  if (!recordsWithEngagement.length) return "互动数据暂不可判";
+  if (topShare >= 0.45) return "互动集中在头部内容";
+  return "互动分布相对分散";
+}
+
+function makeJudgementBody({ filtered, agendaRanks, knownEngagementRecords, topEngagement, topEngagementShare, totalEngagement }) {
+  const topAgenda = agendaRanks[0];
+  if (!knownEngagementRecords.length) {
+    return `${topAgenda.key}是当前样本最多的议程方向，记录 ${formatNumber(topAgenda.mentions)} 条；互动和情绪缺口较大，适合汇报传播结构，不适合下全网互动结论。`;
+  }
+
+  const topTitle = truncateText(topEngagement.title || topEngagement.source || "头部样本", 34);
+  return `${topAgenda.key}是当前样本最多的议程方向；已知互动总计 ${formatNumber(totalEngagement)}，其中最高互动样本占 ${formatShare(topEngagementShare)}，来自${topEngagement.platform}/${topEngagement.topic}：“${topTitle}”。`;
+}
+
+function formatDateCounts(dateStats) {
+  return dateStats.map((item) => `${formatDate(item.date)} ${formatNumber(item.mentions)}`).join(" / ");
+}
+
+function formatRankList(items) {
+  return items.map((item) => `${item.key} ${formatNumber(item.mentions)}条`).join("；");
+}
+
+function formatShare(value) {
+  return `${Math.round(clamp(value, 0, 1) * 100)}%`;
+}
+
+function share(value, total) {
+  if (!total) return 0;
+  return value / total;
+}
+
+function truncateText(text, maxLength) {
+  const value = String(text || "");
+  return value.length > maxLength ? `${value.slice(0, maxLength)}...` : value;
 }
 
 function unique(values) {
