@@ -36,7 +36,7 @@ const MODE_COPY = {
 };
 
 const ORDER = {
-  platform: ["官网/新闻稿", "新闻/网站", "微信", "小红书", "LinkedIn", "X", "抖音", "TikTok", "YouTube", "B站", "微博"],
+  platform: ["新闻/网站", "微信", "小红书", "LinkedIn", "X", "抖音", "TikTok", "YouTube", "B站", "微博"],
   agenda: [
     "开幕式",
     "展区开放",
@@ -56,34 +56,6 @@ const ORDER = {
 };
 
 const sampleRecords = [
-  {
-    "date": "2026-05-27",
-    "platform": "官网/新闻稿",
-    "agenda": "BGlobal新品发布",
-    "topic": "智能硬件",
-    "persona": "官方/主办方",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "BEYOND EXPO 官网",
-    "title": "iFLYTEK to Launch AI Glasses at BEYOND Expo 2026",
-    "url": "https://www.beyondexpo.com/2026/05/27/iflytek-to-launch-ai-glasses-at-beyond-expo-2026/",
-    "notes": "公开官网稿，可核验；未公开平台互动量和情绪口径。"
-  },
-  {
-    "date": "2026-05-27",
-    "platform": "官网/新闻稿",
-    "agenda": "BGlobal新品发布",
-    "topic": "智能硬件",
-    "persona": "官方/主办方",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "BEYOND EXPO 官网",
-    "title": "BGlobal New Product Launch: 11 Top Tech Companies to Debut Next-Generation Innovations",
-    "url": "https://www.beyondexpo.com/2026/05/27/bglobal-new-product-launch-11-top-tech-companies-to-debut-next-generation-innovations-to-the-world-at-beyond-expo-2026/",
-    "notes": "公开官网稿，可核验；说明 BGlobal 新品发布阵容，未公开互动量。"
-  },
   {
     "date": "2026-05-27",
     "platform": "微信",
@@ -657,34 +629,6 @@ const sampleRecords = [
     "title": "Meet Vexrail Founder & CEO at BEYOND Expo 2026 Booth SK001",
     "url": "https://sg.linkedin.com/company/vexrail",
     "notes": "LinkedIn 公开公司页采样；Vexrail 页面显示“5d”，按 2026-06-02 折算为 5月28日；公开页未显示可核验互动数。"
-  },
-  {
-    "date": "2026-05-29",
-    "platform": "官网/新闻稿",
-    "agenda": "国际科技论坛",
-    "topic": "Web3",
-    "persona": "参展商",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "PR Newswire / KuCoin",
-    "title": "KuCoin CMO at BEYOND Expo: Trust Is Becoming the New Infrastructure for Web3",
-    "url": "https://www.prnewswire.com/news-releases/kucoin-cmo-at-beyond-expo-trust-is-becoming-the-new-infrastructure-for-web3-302785553.html",
-    "notes": "参展/论坛企业新闻稿源站，可核验；未公开社交互动量。"
-  },
-  {
-    "date": "2026-05-29",
-    "platform": "官网/新闻稿",
-    "agenda": "BEYOND Awards",
-    "topic": "智能硬件",
-    "persona": "参展商",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "PR Newswire / Makera",
-    "title": "Makera Showcases Z1 at BEYOND Expo 2026, Wins Best of Innovation Award",
-    "url": "https://www.prnewswire.com/apac/news-releases/makera-showcases-z1-at-beyond-expo-2026-wins-best-of-innovation-award-for-making-precision-cnc-more-accessible-302784945.html",
-    "notes": "获奖企业新闻稿源站，可核验；未公开社交互动量。"
   },
   {
     "date": "2026-05-29",
@@ -1360,20 +1304,6 @@ const sampleRecords = [
   },
   {
     "date": "2026-05-30",
-    "platform": "官网/新闻稿",
-    "agenda": "开幕式",
-    "topic": "AI",
-    "persona": "官方/主办方",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "PR Newswire / BEYOND Expo",
-    "title": "聚焦AI从数字走向物理世界，BEYOND Expo 2026盛大开幕",
-    "url": "https://www.prnasia.com/story/535123-1.shtml",
-    "notes": "BEYOND Expo 中文新闻稿源站，可核验；未公开社交互动量。"
-  },
-  {
-    "date": "2026-05-30",
     "platform": "微信",
     "agenda": "展区开放",
     "topic": "国际合作",
@@ -1906,20 +1836,6 @@ const sampleRecords = [
   },
   {
     "date": "2026-05-31",
-    "platform": "官网/新闻稿",
-    "agenda": "会后社交",
-    "topic": "AI",
-    "persona": "官方/主办方",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "PR Newswire / BEYOND Expo",
-    "title": "AI: Digital to Physical | BEYOND Expo 2026 Leads Transformative Global Direction of Tech",
-    "url": "https://www.prnewswire.com/apac/news-releases/ai-digital-to-physical--beyond-expo-2026-leads-transformative-global-direction-of-tech-302786386.html",
-    "notes": "BEYOND Expo 会后英文新闻稿，可核验；未公开社交互动量。"
-  },
-  {
-    "date": "2026-05-31",
     "platform": "微信",
     "agenda": "展区开放",
     "topic": "国际合作",
@@ -2449,34 +2365,6 @@ const sampleRecords = [
     "title": "孵要闻 |澳门特首岑浩辉莅临指导 上海市人形机器人创新孵化器闪耀 BEYOND EXPO 2026",
     "url": "",
     "notes": "搜狗微信搜索第 10 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
-  },
-  {
-    "date": "2026-06-02",
-    "platform": "官网/新闻稿",
-    "agenda": "会后社交",
-    "topic": "AI",
-    "persona": "官方/主办方",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "BEYOND EXPO 官网",
-    "title": "AI: Digital to Physical BEYOND Expo 2026 Leads Transformative Global Direction of Tech",
-    "url": "https://www.beyondexpo.com/2026/06/02/ai-digital-to-physical-beyond-expo-2026-leads-transformative-global-direction-of-tech/",
-    "notes": "BEYOND EXPO 官网 2026-06-02 会后稿；未公开互动量。"
-  },
-  {
-    "date": "2026-06-02",
-    "platform": "官网/新闻稿",
-    "agenda": "会后社交",
-    "topic": "AI",
-    "persona": "官方/主办方",
-    "mentions": 1,
-    "engagement": null,
-    "sentiment": null,
-    "source": "BEYOND EXPO 官网",
-    "title": "The 6th BEYOND Expo Wows Visitors with Showcase Asia's Tech AI: Digital to Physical becomes Reality in Macao",
-    "url": "https://www.beyondexpo.com/2026/06/02/the-6th-beyond-expo-wows-visitors-with-showcase-asias-tech-ai-digital-to-physical-becomes-reality-in-macao/",
-    "notes": "BEYOND EXPO 官网 2026-06-02 会后稿；与 PRNewswire 分发稿同主题，按官网发布页面单独保留。"
   },
   {
     "date": "2026-06-02",
@@ -3076,7 +2964,7 @@ function renderDataNotes(filtered) {
   const modeCopy = dataMode === "captured"
     ? {
         label: "公开可核验样本",
-        text: "当前内置数据来自可打开的官网、媒体、微信、小红书等公开网页；这是部分捕获样本，不是微博、小红书、抖音等平台后台的全网声量。",
+        text: "当前内置数据来自可打开的媒体、微信、小红书、LinkedIn 等公开网页；这是部分捕获样本，不是微博、小红书、抖音等平台后台的全网声量。",
         accuracy: "部分抓取",
       }
     : {
