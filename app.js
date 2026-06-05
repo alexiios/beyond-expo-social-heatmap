@@ -1,4 +1,13 @@
-const DATE_RANGE = ["2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31"];
+const DATE_RANGE = [
+  "2026-05-27",
+  "2026-05-28",
+  "2026-05-29",
+  "2026-05-30",
+  "2026-05-31",
+  "2026-06-01",
+  "2026-06-02",
+  "2026-06-03",
+];
 
 const FIELD_LABELS = {
   platform: "平台",
@@ -10,7 +19,7 @@ const FIELD_LABELS = {
 const MODE_COPY = {
   platform: {
     title: "平台 x 日期",
-    subtitle: "看公开可核验样本在 5 月 27 日到 31 日的来源分布，不代表全网平台声量。",
+    subtitle: "看公开可核验样本在 5 月 27 日到 6 月 3 日的来源分布，不代表全网平台声量。",
   },
   agenda: {
     title: "议程 x 日期",
@@ -37,6 +46,8 @@ const ORDER = {
     "Fund At First Pitch",
     "BEYOND Hack Day",
     "BEYOND Awards",
+    "Digital AI Summit",
+    "Web2+3 AI论坛",
     "国际科技论坛",
     "会后社交",
   ],
@@ -2214,6 +2225,538 @@ const sampleRecords = [
     "title": "TNGlobal brought ASEAN perspectives to BEYOND Expo BGlobal and Global Investment Summit",
     "url": "https://www.linkedin.com/in/yimie-yong-aa5ba631/zh/",
     "notes": "LinkedIn 登录态站内搜索采样；关键词「BGlobal BEYOND Expo」；页面显示“2 天”，按 2026-06-02 折算为 5月31日；公开 reactions：5；该动态转发/引用 TNGlobal 对 BGlobal Summit 和 Global Investment Summit 的现场内容。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "新闻/网站",
+    "agenda": "会后社交",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "PRNewswire",
+    "title": "The 6th BEYOND Expo Wows Visitors with Showcase Asia's Tech AI: Digital to Physical becomes Reality in Macao",
+    "url": "https://www.prnewswire.com/apac/news-releases/the-6th-beyond-expo-wows-visitors-with-showcase-asias-tech-ai-digital-to-physical-becomes-reality-in-macao-302787296.html",
+    "notes": "PRNewswire APAC 公开分发稿；发布时间 2026-06-01 23:56 CST；未公开互动量。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "亚洲第一!BEYOND Expo 2026 圆满收官",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "国际合作",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "从澳门到深圳:BEYOND Expo 2026精彩延续，南山创新闪耀双城",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "其域行业应用",
+    "title": "其域创新亮相 BEYOND Expo 2026:以空间智能连接数字与现实",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "明月湖科创基地",
+    "title": "BEYOND Expo 2026落幕:“两江智造”闪耀全球舞台",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "Digital AI Summit",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "云智慧",
+    "title": "直击BEYOND Expo 2026 | 云智慧Cloudwise亮相澳门，发布“三层战略”护航 AI 数实共生",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "阿里云云栖号",
+    "title": "阿里云亮相BEYOND Expo 2026:以全栈AI技术，激发Agentic时代的亚洲创新力",
+    "url": "",
+    "notes": "搜狗微信搜索第 4 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "展商故事",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "蓝创源生",
+    "title": "BEYOND Expo 2026 回顾:在科技的浪潮中，我们为海洋发声",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "Fund At First Pitch",
+    "topic": "投资路演",
+    "persona": "KOL/创作者",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "金财链上大玩家",
+    "title": "*BEYOND Expo 2026*闭幕式澳門威尼斯人金光會場順利落幕，以FUND AT FIRST PITCH极限速投总决赛率先开启压轴环节",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "清华信息港",
+    "title": "公司动态|柯西黎曼精彩亮相BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "国际合作",
+    "persona": "观众",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "MOMAUP",
+    "title": "活動紀實|澳門高校研究生聯合會參與“深圳—澳門科技產業合作交流推介會”並參觀BEYOND EXPO 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "会后社交",
+    "topic": "出海",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "动点出海",
+    "title": "新加坡拿下东南亚AI基建融资99%，BEYOND Expo 2026圆满收官|SEA Now",
+    "url": "",
+    "notes": "搜狗微信搜索第 8 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "双纽数字AI",
+    "title": "数实共生 智联全球|双纽数字闪耀 BEYOND EXPO 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 9 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "珠海先进集成电路研究院",
+    "title": "搭平台、聚资源、促合作——研究院组织横琴科技企业亮相BEYOND Expo 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 9 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "深圳模力营AI生态社区",
+    "title": "模力动态 | 收官不落幕，科技正当时!2026 BEYOND Expo 南山展区・模力营圆满收官",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-01",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "人形机器人孵化器",
+    "title": "孵要闻 |澳门特首岑浩辉莅临指导 上海市人形机器人创新孵化器闪耀 BEYOND EXPO 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "官网/新闻稿",
+    "agenda": "会后社交",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND EXPO 官网",
+    "title": "AI: Digital to Physical BEYOND Expo 2026 Leads Transformative Global Direction of Tech",
+    "url": "https://www.beyondexpo.com/2026/06/02/ai-digital-to-physical-beyond-expo-2026-leads-transformative-global-direction-of-tech/",
+    "notes": "BEYOND EXPO 官网 2026-06-02 会后稿；未公开互动量。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "官网/新闻稿",
+    "agenda": "会后社交",
+    "topic": "AI",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND EXPO 官网",
+    "title": "The 6th BEYOND Expo Wows Visitors with Showcase Asia's Tech AI: Digital to Physical becomes Reality in Macao",
+    "url": "https://www.beyondexpo.com/2026/06/02/the-6th-beyond-expo-wows-visitors-with-showcase-asias-tech-ai-digital-to-physical-becomes-reality-in-macao/",
+    "notes": "BEYOND EXPO 官网 2026-06-02 会后稿；与 PRNewswire 分发稿同主题，按官网发布页面单独保留。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "新闻/网站",
+    "agenda": "国际科技论坛",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "KoreaTechDesk",
+    "title": "At BEYOND Expo 2026, Korea Positioned Itself as Asia’s Industrial AI Testbed",
+    "url": "https://koreatechdesk.com/beyond-expo-2026-korea-industrial-ai-testbed",
+    "notes": "KoreaTechDesk 2026-06-02 公开报道；未公开互动量。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "枢途科技",
+    "title": "BEYOND Expo 2026 | 在全球科技现场，看见具身智能数据新范式",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "AI硬趣",
+    "title": "BEYOND Expo 2026观察，AI硬件的“实战时代”已经到来",
+    "url": "",
+    "notes": "搜狗微信搜索第 1 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "望默科技wamotech",
+    "title": "望默科技受邀亮相BEYOND Expo 2026，自研外骨骼机器人展现硬核实力",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "创作者经济",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "明辉集团",
+    "title": "明辉集团携IKONE亮相BEYOND Expo 2026，以创意赋能科技品牌新表达",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜；同题 IKONE 转发样本未重复计入。"
+  },
+  {
+    "date": "2026-06-02",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "酱芯科技",
+    "title": "从澳门奔赴全球|酱芯科技 BEYOND Expo 2026 圆满收官:AI 赋能调味，美味打破国界",
+    "url": "",
+    "notes": "搜狗微信搜索第 6 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "新闻/网站",
+    "agenda": "BGlobal新品发布",
+    "topic": "智能硬件",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "网界",
+    "title": "科大讯飞BEYOND Expo 2026亮剑：AI眼镜40g轻量化登场，全场景交互革新未来",
+    "url": "https://www.cnu.com.cn/data/202606/228093.html",
+    "notes": "网界 2026-06-03 12:35 公开报道；未公开互动量。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "新闻/网站",
+    "agenda": "开幕式",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "ANTARA / PRNewswire",
+    "title": "Pudu Robotics Founder & CEO Felix Zhang at BEYOND Expo 2026: Globalizing Physical AI",
+    "url": "https://en.antaranews.com/amp/news/417815/pudu-robotics-founder-ceo-felix-zhang-at-beyond-expo-2026-globalizing-physical-al",
+    "notes": "ANTARA 2026-06-03 公开分发稿；未公开互动量。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "新闻/网站",
+    "agenda": "Web2+3 AI论坛",
+    "topic": "Web3",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "锦鲤KoiPayment",
+    "title": "BIT受邀出席Beyond Expo 2026，券商直投美股开创新模式",
+    "url": "https://koipayment.com/2026/06/03/bit%E5%8F%97%E9%82%80%E5%87%BA%E5%B8%ADbeyond-expo-2026%EF%BC%8C%E5%88%B8%E5%95%86%E7%9B%B4%E6%8A%95%E7%BE%8E%E8%82%A1%E5%BC%80%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/",
+    "notes": "锦鲤KoiPayment 2026-06-03 19:49 公开文章；未公开互动量。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "新闻/网站",
+    "agenda": "Digital AI Summit",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "SegmentFault / 云智慧",
+    "title": "直击BEYOND Expo 2026 | 云智慧Cloudwise亮相澳门，发布“三层战略”护航 AI 数实共生",
+    "url": "https://segmentfault.com/a/1190000047814609?sort=votes",
+    "notes": "SegmentFault 2026-06-03 公开文章；页面显示阅读数但未计入互动量，避免混合口径。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "新闻/网站",
+    "agenda": "国际科技论坛",
+    "topic": "国际合作",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "Mid-East.info",
+    "title": "AI, Energy and Water: The New Asia–Middle East Investment Opportunity",
+    "url": "https://mid-east.info/ai-energy-and-water-the-new-asia-middle-east-investment-opportunity/",
+    "notes": "Mid-East.info 2026-06-03 现场报道；页面数字未确认口径，未计入互动量。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "机器人",
+    "persona": "媒体",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "具身智能机器人世界",
+    "title": "BEYOND Expo2026观察:具身智能的“ChatGPT时刻”还没到，机器人公司在争什么?",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "横琴科技企业亮相BEYOND Expo 2026，展现琴澳产业协同创新成效",
+    "url": "",
+    "notes": "搜狗微信搜索第 2 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "AI",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "嗖马人工智能技术杭州有限公司",
+    "title": "BEYOND Expo 2026落幕:近800家企业亮出底牌，你的同行已经悄悄上车",
+    "url": "",
+    "notes": "搜狗微信搜索第 3 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "倍联德实业",
+    "title": "圆满落幕!倍联德BEYOND Expo 2026澳门之行收官，锐影液冷算力闪耀国际盛会",
+    "url": "",
+    "notes": "搜狗微信搜索第 5 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "国际科技论坛",
+    "topic": "医疗健康",
+    "persona": "官方/主办方",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "BEYOND Expo",
+    "title": "从瑞士健康谷到中国落地:中瑞FEM双向发展论坛首次亮相BEYOND Expo 2026!",
+    "url": "",
+    "notes": "搜狗微信搜索第 7 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "智能硬件",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "珠海市半导体行业协会",
+    "title": "会员动态 | AI赋能 数实共生 !欧森斯携高速示波器、在线工业CT检测设备亮相BEYOND EXPO 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 8 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "今日漕河泾",
+    "title": "特首到访!漕河泾开发区携企亮相BEYOND EXPO 2026",
+    "url": "",
+    "notes": "搜狗微信搜索第 8 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "展区开放",
+    "topic": "国际合作",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "中欧创新生态圈",
+    "title": "活动回顾|深圳中欧创新中心亮相BEYOND Expo 2026!助力第十届中国深圳创新创业大赛国际赛项目招募!",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
+  },
+  {
+    "date": "2026-06-03",
+    "platform": "微信",
+    "agenda": "Fund At First Pitch",
+    "topic": "投资路演",
+    "persona": "参展商",
+    "mentions": 1,
+    "engagement": null,
+    "sentiment": null,
+    "source": "立方匯Hexcubes",
+    "title": "赋能初创，链接全球 | 立方匯亮相 BEYOND Expo 2026，从湾区启航、向世界生长",
+    "url": "",
+    "notes": "搜狗微信搜索第 10 页结果；发布时间由搜狗时间戳换算为 Asia/Shanghai；原文直链未稳定解析，点击“搜索线索”按标题回搜。"
   }
 ];
 
@@ -2304,7 +2847,7 @@ function attachEvents() {
     const inRange = parsed.filter((record) => DATE_RANGE.includes(record.date));
 
     if (!inRange.length) {
-      setStatus("CSV 未找到 2026-05-27 至 2026-05-31 范围内的数据", "error");
+      setStatus(`CSV 未找到 ${formatDateRange()} 范围内的数据`, "error");
       event.target.value = "";
       return;
     }
@@ -2468,8 +3011,8 @@ function buildInsights(filtered) {
       {
         label: "时间趋势",
         title: trend.title,
-        body: `${formatDate(peakDate.date)}为样本峰值，记录 ${formatNumber(peakDate.mentions)} 条；5天节奏为 ${formatDateCounts(dateStats)}。`,
-        meta: `活跃 ${activeDays}/5 天，按公开样本数判断`,
+        body: `${formatDate(peakDate.date)}为样本峰值，记录 ${formatNumber(peakDate.mentions)} 条；${DATE_RANGE.length}天节奏为 ${formatDateCounts(dateStats)}。`,
+        meta: `活跃 ${activeDays}/${DATE_RANGE.length} 天，按公开样本数判断`,
       },
       {
         label: "平台集中",
@@ -2518,6 +3061,7 @@ function renderHeatmap(filtered) {
 
   const grid = document.createElement("div");
   grid.className = "heatmap-grid";
+  grid.style.setProperty("--date-count", DATE_RANGE.length);
   grid.appendChild(makeDiv("axis-cell", FIELD_LABELS[mode]));
   DATE_RANGE.forEach((date) => grid.appendChild(makeDiv("column-label", formatDate(date))));
 
@@ -3003,6 +3547,10 @@ function heatColor(value) {
 function formatDate(date) {
   const [, month, day] = date.split("-");
   return `${Number(month)}月${Number(day)}日`;
+}
+
+function formatDateRange() {
+  return `${formatDate(DATE_RANGE[0])}至${formatDate(DATE_RANGE[DATE_RANGE.length - 1])}`;
 }
 
 function formatNumber(value) {

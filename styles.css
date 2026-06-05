@@ -413,8 +413,8 @@ input[type="search"] {
 
 .heatmap-grid {
   display: grid;
-  grid-template-columns: minmax(150px, 220px) repeat(5, minmax(132px, 1fr));
-  min-width: 820px;
+  grid-template-columns: minmax(150px, 220px) repeat(var(--date-count, 5), minmax(132px, 1fr));
+  min-width: calc(220px + (var(--date-count, 5) * 140px));
   gap: 8px;
 }
 
@@ -849,8 +849,8 @@ input[type="search"] {
   }
 
   .heatmap-grid {
-    grid-template-columns: minmax(112px, 132px) repeat(5, minmax(98px, 112px));
-    min-width: 640px;
+    grid-template-columns: minmax(112px, 132px) repeat(var(--date-count, 5), minmax(98px, 112px));
+    min-width: calc(132px + (var(--date-count, 5) * 104px));
     gap: 6px;
   }
 
