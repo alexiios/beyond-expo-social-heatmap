@@ -1,6 +1,6 @@
 # BEYOND Expo 2026 社交媒体热度追踪原型
 
-这是一个静态网页原型，直接打开 `index.html` 即可使用。当前内置数据已替换为 2026 年 5 月 27 日至 6 月 3 日的 193 条公开可复核样本，其中包含 75 条搜狗微信检索结果、63 条小红书网页版人工采集样本、15 条 LinkedIn 公开页面/登录态搜索样本，以及 40 条官网、新闻稿和新闻网站样本。它不是微博、抖音、视频号等平台后台的全网声量，也不包含未公开的阅读量、播放量或评论量。
+这是一个静态网页原型，直接打开 `index.html` 即可使用。当前内置数据已替换为 2026 年 5 月 27 日至 6 月 3 日的 207 条公开可复核样本，其中包含 75 条搜狗微信检索结果、71 条小红书网页版人工采集样本、21 条 LinkedIn 公开页面/登录态搜索样本，以及 40 条官网、新闻稿和新闻网站样本。它不是微博、抖音、视频号等平台后台的全网声量，也不包含未公开的阅读量、播放量或评论量。
 
 ## CSV 字段
 
@@ -32,7 +32,7 @@ date,platform,agenda,topic,persona,mentions,engagement,sentiment,source,title,ur
 
 ## 内置样本来源
 
-当前内置样本来自 BEYOND EXPO 官网、TechNode、TNGlobal、Xinhua、People's Daily Online、PR Newswire/PRNA、Sina/新浪科技/新浪财经、IT之家、大湾区时报、澳門週報、Yanko Design、KoreaTechDesk、ANTARA、Mid-East.info、SegmentFault、网界、锦鲤KoiPayment、搜狗微信、小红书网页版、LinkedIn 公开页面/登录态搜索等公开网页。新闻、官网、小红书样本的 `url` 字段保留可打开链接；搜狗微信样本因原文直链会触发反爬，保留为“搜索线索”，按标题回搜核验。除小红书卡片和 LinkedIn 公开页面显示的互动数外，其他样本没有抓取到公开互动数据，已留空处理。LinkedIn 样本来自公开公司页、公开帖子页和登录态站内搜索结果，日期按采集时页面相对时间折算，备注中保留相对时间。6 月 1 日至 3 日补充样本主要覆盖官网、PR 分发、新闻网站和搜狗微信前 10 页；小红书、X、抖音、TikTok、LinkedIn 在本轮未加入新的可核验样本。小红书补搜覆盖 `beyondexpo`、`beyond expo`、`BEYONDExpo`、`beyondexpo2026` 等关键词；重复结果、作者名占位标题和关联过弱的结果未纳入。
+当前内置样本来自 BEYOND EXPO 官网、TechNode、TNGlobal、Xinhua、People's Daily Online、PR Newswire/PRNA、Sina/新浪科技/新浪财经、IT之家、大湾区时报、澳門週報、Yanko Design、KoreaTechDesk、ANTARA、Mid-East.info、SegmentFault、网界、锦鲤KoiPayment、搜狗微信、小红书网页版、LinkedIn 公开页面/登录态搜索等公开网页。新闻、官网、小红书样本的 `url` 字段保留可打开链接；搜狗微信样本因原文直链会触发反爬，保留为“搜索线索”，按标题回搜核验。除小红书卡片和 LinkedIn 公开页面显示的互动数外，其他样本没有抓取到公开互动数据，已留空处理。LinkedIn 样本来自公开公司页、公开帖子页、LinkedIn Pulse 和登录态站内搜索结果，日期按采集时页面相对时间或公开发布日期折算，备注中保留相对时间。6 月 1 日至 3 日补充样本覆盖官网、PR 分发、新闻网站、搜狗微信前 10 页、小红书站内关键词搜索和 LinkedIn 公开页；X、抖音、TikTok 在本轮未加入新的可核验样本。小红书补搜覆盖 `beyondexpo`、`beyond expo`、`BEYONDExpo`、`beyondexpo2026` 等关键词；重复结果、作者名占位标题、标题不含 BEYOND 且正文无法浏览确认的弱命中未纳入。
 
 ## 汇报前检查
 
